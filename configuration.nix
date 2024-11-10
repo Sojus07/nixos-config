@@ -54,7 +54,7 @@ in
 		bluetooth = {
 			enable = true;
 		};
-		opengl = {
+		graphics = {
 			enable = true;
 		};
 	    rtl-sdr = {
@@ -127,7 +127,6 @@ in
         libimobiledevice
         usbmuxd
         pulseaudio
-        qbittorrent
 
     ];
 
