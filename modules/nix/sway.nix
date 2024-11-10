@@ -11,7 +11,7 @@
 
         config = rec {
             modifier = "Mod4";
-            terminal = "${pkgs.wezterm}/bin/wezterm";
+            terminal = "wezterm";
             menu = "${pkgs.rofi}/bin/rofi -show drun -c .config/rofi/config.rasi";
             startup = [
                 {command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/skull_purple.png";}

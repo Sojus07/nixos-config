@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-stable,... }:
 let
     home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
 in
@@ -14,15 +14,6 @@ in
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
     boot.loader.systemd-boot.enable = true;	
 
-	#boot.loader = {
-	#	grub = {
-	#		enable = true;
-	#		useOSProber = true;
-	#		device = "nodev";
-	#		efiSupport = true;
-	#	};
-	#};
-	
 	networking.hostName = "poggers"; 
 	networking.networkmanager.enable = true;
 
@@ -54,8 +45,8 @@ in
 		bluetooth = {
 			enable = true;
 		};
-		graphics = {
-			enable = true;
+		opengl = {
+            enable = true;
 		};
 	    rtl-sdr = {
             enable = true;
@@ -78,7 +69,8 @@ in
 		extraGroups = [ "wheel" "docker" "audio" "video" "dialout" "plugdev" ];
   	};
 
- 	environment.systemPackages = with pkgs; [
+ 	environment.systemPackages = 
+    (with pkgs; [
      	# sys
 		unzip
 		yt-dlp
@@ -88,12 +80,12 @@ in
 		curl
 		dosfstools
 		ntfs3g		
-		
+        waybar
+
 		# cli
 		neofetch
 		fastfetch
 		onefetch
-		neovim
 		vim		
 		weechat		
 		ranger		
@@ -127,11 +119,21 @@ in
         libimobiledevice
         usbmuxd
         pulseaudio
+      	
+    ])
+	++
+	(with pkgs-stable; [
+		wezterm
+	]);
+   
+    
 
-    ];
-
-  	networking.firewall.allowedTCPPorts = [ 80 1337 8080 ];
-  	networking.firewall.enable = false;
+  	networking = {
+        firewall = { 
+            enable = true; 
+            allowedTCPPorts = [ 80 1337 8080 ]; 
+        };
+    };
 
 	security = {
         doas = {

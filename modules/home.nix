@@ -4,15 +4,11 @@
 	[
 		./nix/sway.nix
 	    ./nix/user.nix
-    ];
+    	./nix/nvim.nix
+	];
 	
 	home.enableNixpkgsReleaseCheck = false;
 	home.stateVersion = "24.05";
-    
-    home.packages = with pkgs; [
-        waybar
-    
-    ];
 
 	home.file = {
 		# WEZTERM
