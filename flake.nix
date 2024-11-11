@@ -22,18 +22,21 @@
         nixosConfigurations = {
             poggers = lib.nixosSystem {
                 inherit system;
-                modules = [ ./configuration.nix ];
+                modules = [ 
+                    ./configuration.nix 
+                    home-manager.nixosModules.home-manager
+                    {
+                        home-manager.users.fabian = import ./modules/home.nix;
+                        home-manager.extraSpecialArgs = {
+                            inherit nixvim;
+                            inherit pkgs-stable;
+                        };
+                    }
+                ];
                 specialArgs = {
                     inherit pkgs-stable;
                     inherit nixvim;
                 };
-            };
-        };
-        homeConfigurations = {
-            poggers = home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
-                inherit nixvim;
-                modules = [ ./modules/home.nix ]; 
             };
         };
     };

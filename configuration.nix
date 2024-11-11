@@ -161,6 +161,5 @@ in
 
   	system.stateVersion = "unstable"; 
 	
-	home-manager.users.fabian = import ./modules/home.nix;
 }
 
