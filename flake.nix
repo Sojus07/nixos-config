@@ -9,7 +9,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-
+    
     outputs = { self, nixpkgs, nixpkgs-stable, ... }:
     let
         system = "x86_64-linux";
@@ -17,12 +17,13 @@
         pkgs = nixpkgs.legacyPackages.${system};
         pkgs-stable = nixpkgs-stable.legacyPackages.${system};
     in {
-    nixosConfigurations = {
-        poggers = lib.nixosSystem {
-            inherit system;
-            modules = [ ./configuration.nix ];
-            specialArgs = {
-                inherit pkgs-stable;
+        nixosConfigurations = {
+            poggers = lib.nixosSystem {
+                inherit system;
+                modules = [ ./configuration.nix ];
+                specialArgs = {
+                    inherit pkgs-stable;
+                };
             };
         };
     };
