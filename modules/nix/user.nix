@@ -15,5 +15,11 @@
 			    alias update="doas nixos-rebuild switch"
             '';
 		}; 
+    
+        git = {
+            enable = true;
+            userName = "meml0rz";
+            userEmail = "meml0rz";
+        };
 	};	
 }
