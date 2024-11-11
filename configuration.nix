@@ -5,8 +5,8 @@ in
 {
 	imports =
 	[
-		(import "${home-manager}/nixos")
-		./hardware-configuration.nix
+		<home-manager/nixos>
+        ./hardware-configuration.nix
         ./modules/nix/firefox.nix	
     ];
 	
