@@ -2,10 +2,11 @@
 {
 	imports = 
 	[
-		./nix/sway.nix
 	    ./nix/user.nix
-    	./nix/nvim.nix
-	];
+        ./nix/hypr.nix	
+        ./nix/kitty.nix
+        ./nix/nixvim.nix
+    ];
 	
 	home.enableNixpkgsReleaseCheck = false;
 	home.stateVersion = "24.05";

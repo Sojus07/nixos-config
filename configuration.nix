@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-stable,... }:
+{ config, lib, pkgs, inputs, ... }:
 let
     home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
 in
@@ -24,11 +24,6 @@ in
 	};
 
   	services = {
-		xserver = {
-			enable = true;
-			displayManager.startx.enable = true;
-			windowManager.i3.enable = true;
-		};
 		pipewire = {
 			enable = true;
 			pulse.enable = true;
@@ -54,7 +49,11 @@ in
     };
 
 	programs = {
-		nix-ld.enable = true;	
+	    hyprland = {
+            enable = true;
+            xwayland.enable = true;
+        };
+        nix-ld.enable = true;	
 	};
 
     virtualisation = {
@@ -86,6 +85,7 @@ in
 		neofetch
 		fastfetch
 		onefetch
+		neovim
 		vim		
 		weechat		
 		ranger		
@@ -99,6 +99,8 @@ in
         gccgo14
         go
         
+        nixd
+    
         # radio
         sdrplay
         sdrpp
@@ -118,14 +120,10 @@ in
   	    libplist
         libimobiledevice
         usbmuxd
-        pulseaudio
       	
-    ])
-	++
-	(with pkgs-stable; [
-		wezterm
-	]);
-   
+    ]);
+    
+    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
     
 
   	networking = {
