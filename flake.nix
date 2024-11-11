@@ -21,9 +21,10 @@
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.jdoe = import ./home.nix;
+                        home-manager.users.fabian = import ./modules/home.nix;
                         home-manager.extraSpecialArgs = {
-                            inherit inputs nixvim
+                            inherit nixvim;
+                            inherit inputs;
                         };
                     }
                 ];

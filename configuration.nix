@@ -1,11 +1,7 @@
 { config, lib, pkgs, inputs, ... }:
-let
-    home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
 {
 	imports =
 	[
-		<home-manager/nixos>
         ./hardware-configuration.nix
         ./modules/nix/firefox.nix	
     ];
