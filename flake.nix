@@ -11,33 +11,23 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
-    
-    outputs = { self, nixpkgs, nixpkgs-stable, nixvim, home-manager, ... }:
-    let
-        system = "x86_64-linux";
-        lib = nixpkgs.lib;
-        pkgs = nixpkgs.legacyPackages.${system};
-        pkgs-stable = nixpkgs-stable.legacyPackages.${system};
-    in {
+    outputs = inputs@{ nixpkgs, nixpkgs-stable, home-manager, nixvim, ... }: {
         nixosConfigurations = {
-            poggers = lib.nixosSystem {
-                inherit system;
-                modules = [ 
-                    ./configuration.nix 
+            poggers = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
+                modules = [
+                    ./configuration.nix
                     home-manager.nixosModules.home-manager
                     {
-                        home-manager.users.fabian = import ./modules/home.nix;
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.users.jdoe = import ./home.nix;
                         home-manager.extraSpecialArgs = {
-                            inherit nixvim;
-                            inherit pkgs-stable;
+                            inherit inputs nixvim
                         };
                     }
                 ];
-                specialArgs = {
-                    inherit pkgs-stable;
-                    inherit nixvim;
-                };
             };
         };
-    };
+    }; 
 }
