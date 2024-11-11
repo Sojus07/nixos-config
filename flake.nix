@@ -4,13 +4,14 @@
     inputs = {
         nixpkgs-stable.url = "nixpkgs/nixos-24.05";
         nixpkgs.url = "nixpkgs/nixos-unstable";
+        home-manager.url = "github:nix-community/home-manager/release-24.05";
         nixvim = {
             url = "github:nix-community/nixvim";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
     
-    outputs = { self, nixpkgs, nixpkgs-stable, ... }:
+    outputs = { self, nixpkgs, nixpkgs-stable, nixvim, home-manager, ... }:
     let
         system = "x86_64-linux";
         lib = nixpkgs.lib;
@@ -23,7 +24,15 @@
                 modules = [ ./configuration.nix ];
                 specialArgs = {
                     inherit pkgs-stable;
+                    inherit nixvim;
                 };
+            };
+        };
+        homeConfigurations = {
+            poggers = home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                inherit nixvim;
+                modules = [ ./modules/home.nix ]; 
             };
         };
     };
