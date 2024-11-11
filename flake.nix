@@ -29,6 +29,9 @@
                     }
                 ];
             };
+            specialArgs = {
+                inherit inputs;
+            };
         };
     }; 
 }

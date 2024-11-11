@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 {
 	imports =
 	[
@@ -81,7 +81,6 @@
 		neofetch
 		fastfetch
 		onefetch
-		neovim
 		vim		
 		weechat		
 		ranger		
@@ -119,9 +118,6 @@
       	
     ]);
     
-    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
-    
-
   	networking = {
         firewall = { 
             enable = true; 

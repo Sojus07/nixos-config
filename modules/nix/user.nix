@@ -12,7 +12,7 @@
 				alias ls="${pkgs.eza}/bin/eza -l --icons --absolute"
 				alias mkdir="mkdir -pv"
 				alias http="python3 -m http.server 1337"
-			    alias update="doas nixos-rebuild switch"
+			    alias update="sudo nixos-rebuild switch --flake /etc/nixos --impure"
             '';
 		}; 
     

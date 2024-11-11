@@ -3,9 +3,6 @@
     wayland.windowManager.hyprland = { 
         enable = true;
         xwayland.enable = true;
-        plugins = [
-            pkgs.hyprlandPlugins.borders-plus-plus
-        ];
         settings = {
             "monitor" =  "eDP-1, 1920x1080@60, 0x0, 1";
             "$mod" = "SUPER";
