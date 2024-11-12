@@ -10,6 +10,7 @@
       		autoEnableSources = false;
             cmdline = {
                 completion = {
+                    autocomplete = "require('cmp.types').cmp.TriggerEvent.TextChanged";
                     completeopt = [ "menu" "menuone" "noinsert" "noselect" ];
                 };
             };
