@@ -19,7 +19,7 @@
 			vim.opt.autoindent = true
 			vim.opt.smartindent = true
 			vim.opt.softtabstop = 4
-            vim.opt.numbers = true;
+            vim.opt.number = true;
             vim.cmd [[
                 cnoreabbrev W! w!
                 cnoreabbrev Q! q!
