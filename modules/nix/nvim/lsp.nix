@@ -2,6 +2,7 @@
 {
 	programs.nixvim.plugins = {
 		rustaceanvim = {
+            enable = true;
             settings = {
                 server = {
                     cmd = [
