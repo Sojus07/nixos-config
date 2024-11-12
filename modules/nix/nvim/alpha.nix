@@ -3,6 +3,7 @@
     programs.nixvim = {
         plugins = {
             alpha = {
+                enable = true;
                 layout = [
                     {
                         type = "padding";
@@ -64,7 +65,7 @@
                         type = "text";
                         val = "Inspiring quote here.";
                     }
-                ]
+                ];
             };    
         };
     };
