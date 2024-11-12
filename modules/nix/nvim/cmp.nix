@@ -4,6 +4,7 @@
 		cmp-nvim-lsp.enable = true;
 	  	cmp-path.enable = true;
 	  	cmp-buffer.enable = true;
+        cmp-clippy.enable = true;
 		cmp = {
 			enable = true;
       		autoEnableSources = false;
@@ -24,8 +25,8 @@
                 };
                 sources = [
                     { name = "nvim_lsp"; keyword_length = 1; max_item_count = 5; }
-                    { name = "path"; }
-                    { name = "buffer"; }
+                    { name = "path";  keyword_length = 1; max_item_count = 5; }
+                    { name = "clippy";  keyword_length = 1; max_item_count = 5; } 
                 ]; 
 			};
 		};
