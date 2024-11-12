@@ -1,6 +1,9 @@
 { config, pkgs, nixvim, ...}:
 {
-	programs.nixvim = {
+	programs.nixvim.plugins = {
+		cmp-nvim-lsp.enable = true;
+	  	cmp-path.enable = true;
+	  	cmp-buffer.enable = true;
 		cmp = {
       		enable = true;
       		autoEnableSources = true;
@@ -10,7 +13,6 @@
         		{name = "buffer";}
         		{name = "luasnip";}
       		];
-
       		mapping = {
         		"<CR>" = "cmp.mapping.confirm({ select = true })";
         		"<Tab>" = {
