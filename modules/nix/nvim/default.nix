@@ -9,6 +9,7 @@
 		./lualine.nix
         ./alpha.nix	
         ./dev.nix
+        ./nonels.nix
     ];
     programs.nixvim = {
         enable = true;
