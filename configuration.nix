@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-stable, ... }:
 {
 	imports =
 	[
@@ -18,11 +18,20 @@
 		font = "Lat2-Terminus16";
 		useXkbConfig = true;
 	};
+	
+	xdg.portal = { 
+		enable = true; 
+		extraPortals = [ 
+			pkgs.xdg-desktop-portal-gtk 
+			pkgs.xdg-desktop-portal-hyprland
+		]; 
+	}; 
 
   	services = {
 		pipewire = {
 			enable = true;
 			pulse.enable = true;
+			wireplumber.enable = true;	
 		};
 		mullvad-vpn = {
 			enable = true;
@@ -93,7 +102,6 @@
 		nodejs
         gccgo14
         go
-        
         nixd
     
         # radio
@@ -116,7 +124,11 @@
         libimobiledevice
         usbmuxd
       	
-    ]);
+	])
+	++
+	(with pkgs-stable; [
+    	
+	]);
     
   	networking = {
         firewall = { 
