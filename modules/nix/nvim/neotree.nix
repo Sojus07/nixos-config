@@ -1,4 +1,4 @@
-{}:
+{ config, pkgs, nixvim, ... }:
 {
 	programs.nixvim = {
 		plugins = {
@@ -8,7 +8,7 @@
 				enableGitStatus = true;
 				window = {
 					position = "right";
-					width = "45"
+					width = 40;
 				};	
 			};
 		};

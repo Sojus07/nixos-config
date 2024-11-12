@@ -5,6 +5,7 @@
 		./cmp.nix
 		./lsp.nix
 		./neotree.nix
+		./opts.nix
 	];
     programs.nixvim = {
         enable = true;
