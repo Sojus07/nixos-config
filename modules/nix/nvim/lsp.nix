@@ -2,7 +2,7 @@
 {
 	programs.nixvim.plugins = {
 		rustaceanvim = {
-            enable = false;
+            enable = true;
             settings = {
                 server = {
                     cmd = [
@@ -55,7 +55,7 @@
                     autostart = true;
                 };
                 rust_analyzer = {
-                    enable = true;
+                    enable = false;
                     autostart = true;
                     installCargo = true;
                     installRustc = true;
