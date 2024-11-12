@@ -54,12 +54,12 @@
                     enable = true;
                     autostart = true;
                 };
-                rust_analyzer = {
-                    enable = true;
-                    autostart = true;
-                    installCargo = true;
-                    installRustc = true;
-                };
+                #rust_analyzer = {
+                #    enable = true;
+                #    autostart = true;
+                #    installCargo = true;
+                #    installRustc = true;
+                #};
             }; 
         };
 	};
