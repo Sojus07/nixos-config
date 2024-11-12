@@ -1,7 +1,7 @@
 { config, pkgs, nixvim, ... }:
 {
 	programs.nixvim = {
-		extraConfig = ''
+		extraConfigLua = ''
 			local map = vim.api.nvim_set_keymap
 			local opts = { noremap = true, silent = true }
 
@@ -22,8 +22,5 @@
 			vim.opt.softtabstop = 4
 
 		'';
-		option = {
-		
-		};
 	};
 }
