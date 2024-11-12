@@ -15,7 +15,7 @@ let
   '';
 in
 {
-  plugins = {
+  programs.nixvim.plugins = {
     cmp = {
       enable = true;
       autoEnableSources = true;
