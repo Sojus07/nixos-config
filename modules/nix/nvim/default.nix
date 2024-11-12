@@ -7,7 +7,7 @@
 		./neotree.nix
 		./opts.nix
 		./lualine.nix
-	
+        ./alpha.nix	
     ];
     programs.nixvim = {
         enable = true;
