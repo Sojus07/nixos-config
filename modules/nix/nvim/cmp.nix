@@ -9,7 +9,7 @@
       		autoEnableSources = true;
             cmdline = {
                 completion = {
-                    completeopt = [ "menu", "menuone", "noinsert", "noselect" ]
+                    completeopt = { "menu", "menuone", "noinsert", "noselect" }
                 };
             };
             settings = {
