@@ -16,10 +16,9 @@ let
 in
 {
     programs.nixvim.plugins = {
-            cmp = {
+           cmp = {
                 enable = true;
                 autoEnableSources = true;
-
                 settings = {
                     mapping = {
                         "<C-b>" = "cmp.mapping.scroll_docs(-4)";
@@ -28,7 +27,6 @@ in
                         "<C-e>" = "cmp.mapping.abort()";
                         "<C-Left>" = "cmp.mapping.abort()";
                         "<CR>" = "cmp.mapping.confirm({ select = false })";
-
                     };
 
                     preselect = "cmp.PreselectMode.None";
@@ -61,7 +59,7 @@ in
                     name = "treesitter";
                     priority = 850;
                     option = {
-                      inherit get_bufnrs;
+                        inherit get_bufnrs;
                     };
                     }
                     {
