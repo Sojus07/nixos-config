@@ -7,7 +7,8 @@
 		./neotree.nix
 		./opts.nix
 		./lualine.nix
-	];
+	
+    ];
     programs.nixvim = {
         enable = true;
         colorschemes.oxocarbon.enable = true;

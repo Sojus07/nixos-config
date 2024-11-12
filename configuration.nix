@@ -45,7 +45,7 @@
 		bluetooth = {
 			enable = true;
 		};
-		opengl = {
+		graphics = {
             enable = true;
 		};
 	    rtl-sdr = {
