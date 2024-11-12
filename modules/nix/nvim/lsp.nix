@@ -1,66 +1,123 @@
-{ config, pkgs, nixvim, ... }:
 {
-	programs.nixvim.plugins = {
-		rustaceanvim = {
-            enable = true;
-            settings = {
-                server = {
-                    cmd = [
-                        "rustup"
-                        "run"
-                        "nightly"
-                        "rust-analyzer"
-                    ];
-                    default_settings = {
-                        rust-analyzer = {
-                            check = {
-                                command = "clippy";
-                            };
-                            inlayHints = {
-                                lifetimeElisionHints = {
-                                    enable = "always";
-                                };
-                            };
-                        };
-                    };
-                    standalone = false;
-                };
+  programs.nixvim.plugins = {
+    lsp-format = {
+      enable = true;
+    };
+    lsp = {
+      enable = true;
+      inlayHints = true;
+      servers = {
+        html = {
+          enable = true;
+        };
+        lua_ls = {
+          enable = true;
+        };
+        # nil-ls = {
+        #   enable = true;
+        # };
+        nixd = {
+          enable = true;
+          extraOptions = {
+            nixos = {
+              expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.aurelionite.options";
             };
+            home_manager = {
+              expr = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.aurelionite.options";
+            };
+          };
         };
-        lsp = {
-			enable = true;
-            servers = {
-                asm_lsp = {
-                    enable = true;
-                    autostart = true;
-                };
-                clangd = {
-                    enable = true;
-                    autostart = true;
-                };
-                gopls = {
-                    enable = true;
-                    autostart = true;
-                };
-                lua_ls = {
-                    enable = true;
-                    autostart = true;
-                };
-                nixd = {
-                    enable = true;
-                    autostart = true;
-                };
-                pyright = {
-                    enable = true;
-                    autostart = true;
-                };
-                rust_analyzer = {
-                    enable = false;
-                    autostart = true;
-                    installCargo = true;
-                    installRustc = true;
-                };
-            }; 
+        marksman = {
+          enable = true;
         };
-	};
+        pyright = {
+          enable = true;
+        };
+        gopls = {
+          enable = true;
+        };
+        terraformls = {
+          enable = true;
+        };
+        yamlls = {
+          enable = true;
+        };
+      };
+      keymaps = {
+        silent = true;
+        lspBuf = {
+          gd = {
+            action = "definition";
+            desc = "Goto Definition";
+          };
+          gr = {
+            action = "references";
+            desc = "Goto References";
+          };
+          gD = {
+            action = "declaration";
+            desc = "Goto Declaration";
+          };
+          gI = {
+            action = "implementation";
+            desc = "Goto Implementation";
+          };
+          gT = {
+            action = "type_definition";
+            desc = "Type Definition";
+          };
+          # Use LSP saga keybinding instead
+          # K = {
+          #   action = "hover";
+          #   desc = "Hover";
+          # };
+          # "<leader>cw" = {
+          #   action = "workspace_symbol";
+          #   desc = "Workspace Symbol";
+          # };
+          "<leader>cr" = {
+            action = "rename";
+            desc = "Rename";
+          };
+        };
+        # diagnostic = {
+        #   "<leader>cd" = {
+        #     action = "open_float";
+        #     desc = "Line Diagnostics";
+        #   };
+        #   "[d" = {
+        #     action = "goto_next";
+        #     desc = "Next Diagnostic";
+        #   };
+        #   "]d" = {
+        #     action = "goto_prev";
+        #     desc = "Previous Diagnostic";
+        #   };
+        # };
+      };
+    };
+  };
+  extraConfigLua = ''
+    local _border = "rounded"
+
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+      vim.lsp.handlers.hover, {
+        border = _border
+      }
+    )
+
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+      vim.lsp.handlers.signature_help, {
+        border = _border
+      }
+    )
+
+    vim.diagnostic.config{
+      float={border=_border}
+    };
+
+    require('lspconfig.ui.windows').default_options = {
+      border = _border
+    }
+  '';
 }
