@@ -3,7 +3,7 @@
     imports = [
         nixvim.homeManagerModules.nixvim
 		./cmp.nix
-		#./lsp.nix
+		./lsp.nix
 	];
     programs.nixvim = {
         enable = true;
