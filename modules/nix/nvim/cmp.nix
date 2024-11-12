@@ -6,7 +6,7 @@
 	  	cmp-buffer.enable = true;
 		cmp = {
 			enable = true;
-      		autoEnableSources = true;
+      		autoEnableSources = false;
             cmdline = {
                 completion = {
                     completeopt = [ "menu" "menuone" "noinsert" "noselect" ];
@@ -22,6 +22,11 @@
                     "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
                     "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})"; 
                 };
+                sources = [
+                    { name = "nvim_lsp"; keyword_length = 1; max_item_count = 5; }
+                    { name = "path"; }
+                    { name = "buffer"; }
+                ]; 
 			};
 		};
 	};

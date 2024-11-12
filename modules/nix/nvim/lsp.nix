@@ -45,6 +45,10 @@
                     enable = true;
                     autostart = true;
                 };
+                nix = {
+                    enable = true;
+                    autostart = true;
+                };
                 nixd = {
                     enable = true;
                     autostart = true;
