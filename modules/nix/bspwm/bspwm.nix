@@ -4,7 +4,7 @@
     sxhkd = {
       enable = true;
       keybindings = {
-        "super + return" = "${pkgs.alacritty}/bin/alacritty";
+        "super + Return" = "${pkgs.alacritty}/bin/alacritty";
         "super + space" = "${pkgs.rofi}/bin/rofi -show drun";
 
         "super + shift + r" = "bspc restart";
