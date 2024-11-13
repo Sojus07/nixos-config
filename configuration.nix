@@ -36,6 +36,10 @@
   };
 
   services = {
+    xserver = {
+      enable = true;
+      displayManager.startx.enable = true;
+    };
     pipewire = {
       enable = true;
       pulse.enable = true;

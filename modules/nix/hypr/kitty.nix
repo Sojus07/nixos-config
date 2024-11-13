@@ -6,7 +6,7 @@
       extraConfig = ''
         font_size 15.0
         cursor_shape beam
-        close_window
+        close_window true
       '';
     };
     tmux = {
