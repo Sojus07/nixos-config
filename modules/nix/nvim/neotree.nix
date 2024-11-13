@@ -11,6 +11,7 @@
         enable = true;
         enableDiagnostics = true;
         enableGitStatus = true;
+        closeIfLastWindow = true;
         window = {
           position = "right";
           width = 40;
