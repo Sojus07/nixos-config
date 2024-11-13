@@ -39,7 +39,7 @@
         yamlls = {
           enable = true;
         };
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           autostart = true;
           installRustc = true;
