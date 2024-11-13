@@ -36,6 +36,14 @@
         yamlls = {
           enable = true;
         };
+        rust-analyzer = {
+          enable = true;
+          autostart = true;
+        };
+        clangd = {
+          enable = true;
+          autostart = true;
+        };
       };
       keymaps = {
         silent = true;
