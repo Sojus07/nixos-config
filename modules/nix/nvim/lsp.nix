@@ -23,6 +23,7 @@
         };
         rnix = {
           enable = true;
+          package = null;
           extraOptions = {
             nixos = {
               expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.aurelionite.options";
