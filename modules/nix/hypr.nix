@@ -2,6 +2,8 @@
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    xwayland.enable = true;
+    systemd.enable = true;
     extraConfig = ''
       windowrulev2 = opacity 0.0 override, class:^(xwaylandvideobridge)$
       windowrulev2 = noanim, class:^(xwaylandvideobridge)$
@@ -18,10 +20,11 @@
 
     '';
     settings = {
-      "monitor" = "HDMI-A-2, 2560x1440@144, 0x0, 1";
+      "monitor" = "HDMI-A-2, 2560x1440@144, 0x0, 1, bitdepth,10";
       "$mod" = "SUPER";
       exec-once = [
         "waybar &"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "${pkgs.swaybg}/bin/swaybg -i ~/.wp/temple.png"
       ];
       bind = [

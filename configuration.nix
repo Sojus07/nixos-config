@@ -64,6 +64,7 @@
   programs = {
     hyprland = {
       enable = true;
+      xwayland.enable = true;
     };
     nix-ld.enable = true;
   };
@@ -99,6 +100,9 @@
       dosfstools
       ntfs3g
       waybar
+      xdg-desktop-portal-hyprland
+      grim
+      slurp
 
       # cli
       neofetch
@@ -131,8 +135,8 @@
       # misc		
       cava
       mumble
-      discord-screenaudio
       discord
+      xwaylandvideobridge
 
       # hardware & shit
       libplist
