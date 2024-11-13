@@ -131,7 +131,8 @@
       # misc		
       cava
       mumble
-      vesktop
+      discord-screenaudio
+      discord
 
       # hardware & shit
       libplist
