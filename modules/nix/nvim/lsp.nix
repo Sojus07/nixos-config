@@ -1,4 +1,10 @@
 {
+  config,
+  pkgs,
+  nixvim,
+  ...
+}:
+{
   programs.nixvim.plugins = {
     clangd-extensions.enable = true;
     crates-nvim.enable = true;
@@ -17,14 +23,14 @@
         };
         nixd = {
           enable = true;
-          extraOptions = {
-            nixos = {
-              expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.aurelionite.options";
-            };
-            home_manager = {
-              expr = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.aurelionite.options";
-            };
-          };
+          #extraOptions = {
+          #  nixos = {
+          #    expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.aurelionite.options";
+          #  };
+          #  home_manager = {
+          #    expr = "(builtins.getFlake \"/etc/nixos\").homeConfigurations.aurelionite.options";
+          #  };
+          #};
         };
         asm_lsp = {
           enable = true;
@@ -44,35 +50,6 @@
         clangd = {
           enable = true;
           autostart = true;
-        };
-      };
-      keymaps = {
-        silent = true;
-        lspBuf = {
-          gd = {
-            action = "definition";
-            desc = "Goto Definition";
-          };
-          gr = {
-            action = "references";
-            desc = "Goto References";
-          };
-          gD = {
-            action = "declaration";
-            desc = "Goto Declaration";
-          };
-          gI = {
-            action = "implementation";
-            desc = "Goto Implementation";
-          };
-          gT = {
-            action = "type_definition";
-            desc = "Type Definition";
-          };
-          "<leader>cr" = {
-            action = "rename";
-            desc = "Rename";
-          };
         };
       };
     };
