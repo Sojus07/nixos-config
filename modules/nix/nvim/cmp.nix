@@ -16,27 +16,27 @@ let
 in
 {
   programs.nixvim.plugins = {
-    blink-cmp = {
-      enable = true;
-    };
     cmp = {
       enable = true;
       autoEnableSources = true;
       settings = {
+        window = {
+          completion = {
+            autocomplete = true;
+            col_offset = -3;
+            side_padding = 0;
+          };
+        };
         completion = {
+          completeopt = "menu,menuone,noinsert,noselect";
           keyword_length = 1;
-          completeopt = [
-            "menu"
-            "menuone"
-            "noinsert"
-            "noselect"
-          ];
         };
         sorting = {
           comparators = [
             "require('cmp.config.compare').offset"
             "require('cmp.config.compare').exact"
             "require('cmp.config.compare').score"
+            "require('clangd_extensions.cmp_scores')"
             "require('cmp.config.compare').recently_used"
             "require('cmp.config.compare').locality"
             "require('cmp.config.compare').kind"
@@ -45,12 +45,7 @@ in
           ];
         };
         mapping = {
-          "<C-Down>" = "cmp.mapping.scroll_docs(-4)";
-          "<c-Up>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Space>" = "cmp.mapping.complete()";
-          "<C-e>" = "cmp.mapping.abort()";
-          "<C-Left>" = "cmp.mapping.abort()";
-          "<Tab>".__raw = ''
+          "<Down>".__raw = ''
             cmp.mapping(function(fallback)
             	if cmp.visible() then
             		cmp.select_next_item()
@@ -59,7 +54,8 @@ in
             	end
             end, { "i", "s" })
           '';
-          "<S-Tab>".__raw = ''
+
+          "<Up>".__raw = ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
                 cmp.select_prev_item()
@@ -68,6 +64,12 @@ in
               end
             end, { "i", "s" })
           '';
+
+          "<C-n>" = "cmp.mapping.scroll_docs(-4)";
+          "<c-Up>" = "cmp.mapping.scroll_docs(4)";
+          "<C-Space>" = "cmp.mapping.complete()";
+          "<C-e>" = "cmp.mapping.abort()";
+          "<C-Left>" = "cmp.mapping.abort()";
           "<CR>" = "cmp.mapping.confirm({ select = false })";
         };
 
@@ -77,13 +79,6 @@ in
         sources = [
           {
             name = "nvim_lsp";
-            priority = 1000;
-            option = {
-              inherit get_bufnrs;
-            };
-          }
-          {
-            name = "nvim_lsp_signature_help";
             priority = 1000;
             option = {
               inherit get_bufnrs;
@@ -121,10 +116,6 @@ in
           {
             name = "cmdline";
             priority = 300;
-          }
-          {
-            name = "git";
-            priority = 250;
           }
         ];
       };

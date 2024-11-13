@@ -26,9 +26,6 @@
             };
           };
         };
-        marksman = {
-          enable = true;
-        };
         asm_lsp = {
           enable = true;
         };
@@ -36,9 +33,6 @@
           enable = true;
         };
         gopls = {
-          enable = true;
-        };
-        yamlls = {
           enable = true;
         };
         rust_analyzer = {
