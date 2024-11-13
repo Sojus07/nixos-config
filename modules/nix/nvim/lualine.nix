@@ -1,10 +1,15 @@
-{ config, pkgs, nixvim, ... }:
 {
-	programs.nixvim = {
-		plugins = {
-			lualine = {
-				enable = true;
-			};
-		};
-	};
+  config,
+  pkgs,
+  nixvim,
+  ...
+}:
+{
+  programs.nixvim = {
+    plugins = {
+      lualine = {
+        enable = true;
+      };
+    };
+  };
 }

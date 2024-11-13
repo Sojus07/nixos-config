@@ -26,6 +26,8 @@ in
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-e>" = "cmp.mapping.abort()";
           "<C-Left>" = "cmp.mapping.abort()";
+          "<Up>" = "cmp.mapping.select_prev_item()";
+          "<Down>" = "cmp.mapping.select_next_item()";
           "<CR>" = "cmp.mapping.confirm({ select = false })";
         };
 
