@@ -26,38 +26,38 @@
       vim.opt.softtabstop = 4
       vim.opt.number = true;
       vim.cmd [[
-            cnoreabbrev W! w!
-            cnoreabbrev Q! q!
-            cnoreabbrev Qall! qall!
-            cnoreabbrev Wq wq
-            cnoreabbrev Wa wa
-            cnoreabbrev wQ wq
-            cnoreabbrev WQ wq
-            cnoreabbrev W w
-            cnoreabbrev Q q
-            cnoreabbrev Qall qall 
-        ]]
+        cnoreabbrev W! w!
+        cnoreabbrev Q! q!
+        cnoreabbrev Qall! qall!
+        cnoreabbrev Wq wq
+        cnoreabbrev Wa wa
+        cnoreabbrev wQ wq
+        cnoreabbrev WQ wq
+        cnoreabbrev W w
+        cnoreabbrev Q q
+        cnoreabbrev Qall qall 
+      ]]
 
       local _border = "rounded"
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-              vim.lsp.handlers.hover, {
-                border = _border
-              }
-            )
+        vim.lsp.handlers.hover, {
+          border = _border
+        }
+      )
 
-            vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-              vim.lsp.handlers.signature_help, {
-                border = _border
-              }
-            )
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+        vim.lsp.handlers.signature_help, {
+          border = _border
+        }
+      )
 
-            vim.diagnostic.config{
-              float={border=_border}
-            };
+      vim.diagnostic.config{
+        float={border=_border}
+      };
 
-            require('lspconfig.ui.windows').default_options = {
-              border = _border
-            }
+      require('lspconfig.ui.windows').default_options = {
+        border = _border
+      }
     '';
   };
 }

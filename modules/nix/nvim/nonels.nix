@@ -6,6 +6,7 @@
     settings = {
       updateInInsert = false;
     };
+
     sources = {
       code_actions = {
         gitsigns.enable = true;

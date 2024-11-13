@@ -2,32 +2,72 @@ _:
 let
   get_bufnrs.__raw = ''
     function()
-        local buf_size_limit = 1024 * 1024 -- 1MB size limit
-        local bufs = vim.api.nvim_list_bufs()
-        local valid_bufs = {}
-        for _, buf in ipairs(bufs) do
-            if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf)) < buf_size_limit then
-                table.insert(valid_bufs, buf)
-            end
+      local buf_size_limit = 1024 * 1024 -- 1MB size limit
+      local bufs = vim.api.nvim_list_bufs()
+      local valid_bufs = {}
+      for _, buf in ipairs(bufs) do
+        if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf)) < buf_size_limit then
+            table.insert(valid_bufs, buf)
         end
-        return valid_bufs
+      end
+      return valid_bufs
     end
   '';
 in
 {
   programs.nixvim.plugins = {
+    blink-cmp = {
+      enable = true;
+    };
     cmp = {
       enable = true;
       autoEnableSources = true;
       settings = {
+        completion = {
+          keyword_length = 1;
+          completeopt = [
+            "menu"
+            "menuone"
+            "noinsert"
+            "noselect"
+          ];
+        };
+        sorting = {
+          comparators = [
+            "require('cmp.config.compare').offset"
+            "require('cmp.config.compare').exact"
+            "require('cmp.config.compare').score"
+            "require('cmp.config.compare').recently_used"
+            "require('cmp.config.compare').locality"
+            "require('cmp.config.compare').kind"
+            "require('cmp.config.compare').length"
+            "require('cmp.config.compare').order"
+          ];
+        };
         mapping = {
-          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
-          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<C-Down>" = "cmp.mapping.scroll_docs(-4)";
+          "<c-Up>" = "cmp.mapping.scroll_docs(4)";
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-e>" = "cmp.mapping.abort()";
           "<C-Left>" = "cmp.mapping.abort()";
-          "<Up>" = "cmp.mapping.select_prev_item()";
-          "<Down>" = "cmp.mapping.select_next_item()";
+          "<Tab>".__raw = ''
+            cmp.mapping(function(fallback)
+            	if cmp.visible() then
+            		cmp.select_next_item()
+            	else
+            	  fallback()
+            	end
+            end, { "i", "s" })
+          '';
+          "<S-Tab>".__raw = ''
+            cmp.mapping(function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item()
+              else
+                fallback()
+              end
+            end, { "i", "s" })
+          '';
           "<CR>" = "cmp.mapping.confirm({ select = false })";
         };
 
@@ -85,14 +125,6 @@ in
           {
             name = "git";
             priority = 250;
-          }
-          {
-            name = "calc";
-            priority = 150;
-          }
-          {
-            name = "emoji";
-            priority = 100;
           }
         ];
       };
