@@ -25,7 +25,7 @@
       vim.opt.smartindent = true
       vim.opt.softtabstop = 4
       vim.opt.number = true;
-        vim.cmd [[
+      vim.cmd [[
             cnoreabbrev W! w!
             cnoreabbrev Q! q!
             cnoreabbrev Qall! qall!
@@ -38,8 +38,8 @@
             cnoreabbrev Qall qall 
         ]]
 
-        local _border = "rounded"
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+      local _border = "rounded"
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
               vim.lsp.handlers.hover, {
                 border = _border
               }
