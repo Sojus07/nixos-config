@@ -27,6 +27,9 @@
         marksman = {
           enable = true;
         };
+        asm_lsp = {
+          enable = true;
+        };
         pyright = {
           enable = true;
         };
@@ -39,6 +42,8 @@
         rust-analyzer = {
           enable = true;
           autostart = true;
+          installRustc = true;
+          installCargo = true;
         };
         clangd = {
           enable = true;
