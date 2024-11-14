@@ -21,9 +21,8 @@
         lua_ls = {
           enable = true;
         };
-        rnix = {
+        nixd = {
           enable = true;
-          package = null;
           extraOptions = {
             nixos = {
               expr = "(builtins.getFlake \"/etc/nixos\").nixosConfigurations.aurelionite.options";

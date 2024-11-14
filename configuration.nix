@@ -42,6 +42,7 @@
     xserver = {
       enable = true;
       displayManager.startx.enable = true;
+      windowManager.bspwm.enable = true;
     };
     pipewire = {
       enable = true;
@@ -110,6 +111,7 @@
       xdg-desktop-portal-hyprland
       grim
       slurp
+      feh
 
       # cli
       neofetch

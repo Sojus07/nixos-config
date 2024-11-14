@@ -31,19 +31,9 @@ in
           completeopt = "menu,menuone,noinsert,noselect";
           keyword_length = 1;
         };
-        sorting = {
-          comparators = [
-            "require('cmp.config.compare').offset"
-            "require('cmp.config.compare').exact"
-            "require('cmp.config.compare').score"
-            "require('clangd_extensions.cmp_scores')"
-            "require('cmp.config.compare').recently_used"
-            "require('cmp.config.compare').locality"
-            "require('cmp.config.compare').kind"
-            "require('cmp.config.compare').length"
-            "require('cmp.config.compare').order"
-          ];
-        };
+        sorting =
+          {
+          };
         mapping = {
           "<Down>".__raw = ''
             cmp.mapping(function(fallback)
@@ -55,7 +45,7 @@ in
             end, { "i", "s" })
           '';
 
-          "<Up>".__raw = ''
+          "<S-Tab>".__raw = ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
                 cmp.select_prev_item()
@@ -64,12 +54,10 @@ in
               end
             end, { "i", "s" })
           '';
-
           "<C-n>" = "cmp.mapping.scroll_docs(-4)";
           "<c-Up>" = "cmp.mapping.scroll_docs(4)";
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-e>" = "cmp.mapping.abort()";
-          "<C-Left>" = "cmp.mapping.abort()";
           "<CR>" = "cmp.mapping.confirm({ select = false })";
         };
 
@@ -99,22 +87,7 @@ in
             };
           }
           {
-            name = "luasnip";
-            priority = 750;
-          }
-          {
-            name = "buffer";
-            priority = 500;
-            option = {
-              inherit get_bufnrs;
-            };
-          }
-          {
             name = "path";
-            priority = 300;
-          }
-          {
-            name = "cmdline";
             priority = 300;
           }
         ];
