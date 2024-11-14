@@ -112,6 +112,7 @@
       grim
       slurp
       feh
+      polybar
 
       # cli
       neofetch

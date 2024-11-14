@@ -4,7 +4,7 @@
     alacritty = {
       enable = true;
       settings = {
-        color = {
+        colors = {
           primary = {
             background = "#282828";
             foreground = "#ebdbb2";
@@ -30,13 +30,10 @@
             white = "#ebdbb2";
           };
         };
-        window = {
-          decorations = "Full";
-        };
         font = {
-          size = "16";
+          size = 20;
           normal = {
-            family = "Dina";
+            family = "FantasqueSansMNerdFont";
           };
         };
       };
