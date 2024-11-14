@@ -3,7 +3,8 @@
   imports = [
     ./bspwm.nix
     ./alacritty.nix
-    ./polybar.nix
+    #./polybar.nix
+    ./eww.nix
   ];
   #home.file = {
 
