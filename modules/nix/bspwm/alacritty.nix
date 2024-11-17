@@ -4,6 +4,9 @@
     alacritty = {
       enable = true;
       settings = {
+        terminal.shell = {
+          program = "tmux";
+        };
         colors = {
           primary = {
             background = "#282828";

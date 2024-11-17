@@ -112,7 +112,7 @@
       grim
       slurp
       feh
-
+      chromium
       # cli
       neofetch
       fastfetch

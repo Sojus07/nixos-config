@@ -30,9 +30,6 @@
       initExtra = ''
         eval "$(fzf --bash)"
         PS1="\[\e[38;5;216m\]\u\[\e[38;5;220m\]@\[\e[38;5;222m\]\h \[\e[38;5;229m\]\w \[\033[0m\]% "
-        if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-          tmux attach-session -t default || tmux new-session -s default
-        fi
 
       '';
     };
@@ -69,6 +66,13 @@
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
         set -g status-position top
+
+
+        set -g @net_speed_interfaces "wg0-mullvad"
+        set -g @download_speed_format "%10s"
+        set -g @upload_speed_format "%10s"
+        set -g @net_speed_format "D:%10s U:%10s"
+        set -g status-right '#{cpu_bg_color} CPU: #{cpu_icon} #{cpu_percentage} | %a %h-%d %H:%M '
       '';
     };
   };
