@@ -154,7 +154,7 @@
 
     ])
     ++ (with pkgs-stable; [
-
+      wezterm
     ]);
 
   networking = {

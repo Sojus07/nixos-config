@@ -32,7 +32,6 @@
               home-manager.users.fabian = import ./modules/home.nix;
               home-manager.extraSpecialArgs = {
                 inherit nixvim;
-                inherit inputs;
               };
             }
           ];
