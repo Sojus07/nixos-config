@@ -19,6 +19,11 @@
       nixvim,
       ...
     }:
+    let
+      system = "x86_64-linux";
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
+      pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+    in
     {
       nixosConfigurations = {
         poggers = nixpkgs.lib.nixosSystem {
@@ -27,17 +32,24 @@
             ./configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.fabian = import ./modules/home.nix;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.fabian = import ./modules/home.nix;
+              };
               home-manager.extraSpecialArgs = {
                 inherit nixvim;
+                inherit inputs;
+                inherit pkgs;
+                inherit pkgs-stable;
               };
             }
           ];
         };
         specialArgs = {
           inherit inputs;
+          inherit pkgs;
+          inherit pkgs-stable;
         };
       };
     };
