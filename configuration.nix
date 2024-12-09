@@ -113,6 +113,7 @@
       slurp
       feh
       chromium
+
       # cli
       neofetch
       fastfetch
@@ -131,27 +132,11 @@
       go
       nixd
 
-      # radio
-      sdrplay
-      sdrpp
-      hackrf
-      rtl-sdr
-      gqrx
-      noaa-apt
-      rtl_433
-      rtl-ais
-
       # misc		
       cava
-      mumble
       discord
-      xwaylandvideobridge
 
-      # hardware & shit
-      libplist
-      libimobiledevice
-      usbmuxd
-
+      wezterm
     ])
     ++ (with pkgs-stable; [
       wezterm

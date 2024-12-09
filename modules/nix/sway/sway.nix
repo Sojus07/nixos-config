@@ -97,7 +97,7 @@
         blur_passes 4
       	default_dim_inactive 0.2
       	for_window [app_id="wezterm"] blur enable
-      	for_window [app_id="code"] blur enable
+      	for_window [app_id="kitty"] blur enable
       	for_window [app_id="rofi"] blur enable
         default_border pixel 0px
         default_floating_border none
