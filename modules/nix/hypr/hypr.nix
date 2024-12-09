@@ -5,27 +5,20 @@
     xwayland.enable = true;
     systemd.enable = true;
     extraConfig = ''
-      windowrulev2 = opacity 0.0 override, class:^(xwaylandvideobridge)$
-      windowrulev2 = noanim, class:^(xwaylandvideobridge)$
-      windowrulev2 = noinitialfocus, class:^(xwaylandvideobridge)$
-      windowrulev2 = maxsize 1 1, class:^(xwaylandvideobridge)$
-      windowrulev2 = noblur, class:^(xwaylandvideobridge)$
-
       bindel = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
       bindel = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
       bindl = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
       bindl = , XF86AudioPlay, exec, ${pkgs.playerctl}/bin/playerctl play-pause
       bindl = , XF86AudioPrev, exec, ${pkgs.playerctl}/bin/playerctl previous
       bindl = , XF86AudioNext, exec, ${pkgs.playerctl}/bin/playerctl next
-
     '';
     settings = {
-      "monitor" = "HDMI-A-2, 2560x1440@144, 0x0, 1, bitdepth,10";
+      "monitor" = ",2560x1440@144, 0x0, 1, bitdepth,10";
       "$mod" = "SUPER";
       exec-once = [
         "waybar &"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "${pkgs.swaybg}/bin/swaybg -i ~/.wp/temple.png"
+        "${pkgs.swaybg}/bin/swaybg -i ~/.wp/anime_blue.png"
       ];
       bind = [
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty"

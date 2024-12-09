@@ -2,7 +2,7 @@
   description = "My first flake!";
 
   inputs = {
-    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
+    pkgs-stable.url = "nixpkgs/nixos-24.05";
     nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager/release-24.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -12,9 +12,9 @@
     };
   };
   outputs =
-    inputs@{
+    {
       nixpkgs,
-      nixpkgs-stable,
+      pkgs-stable,
       home-manager,
       nixvim,
       ...
@@ -22,7 +22,7 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+      stable = pkgs-stable.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
@@ -39,17 +39,13 @@
               };
               home-manager.extraSpecialArgs = {
                 inherit nixvim;
-                inherit inputs;
-                inherit pkgs;
-                inherit pkgs-stable;
+                inherit stable;
               };
             }
           ];
         };
         specialArgs = {
-          inherit inputs;
-          inherit pkgs;
-          inherit pkgs-stable;
+          inherit stable;
         };
       };
     };

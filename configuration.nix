@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  pkgs-stable,
   ...
 }:
 {
@@ -18,8 +17,18 @@
   ];
   boot.loader.systemd-boot.enable = true;
 
-  networking.hostName = "poggers";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "poggers";
+    networkmanager.enable = true;
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        80
+        1337
+        8080
+      ];
+    };
+  };
 
   time.timeZone = "Europe/Berlin";
   console = {
@@ -96,63 +105,45 @@
     ];
   };
 
-  environment.systemPackages =
-    (with pkgs; [
-      # sys
-      unzip
-      yt-dlp
-      inetutils
-      git
-      wget
-      curl
-      dosfstools
-      ntfs3g
-      waybar
-      xdg-desktop-portal-hyprland
-      grim
-      slurp
-      feh
-      chromium
+  environment.systemPackages = with pkgs; [
+    # sys
+    unzip
+    yt-dlp
+    inetutils
+    git
+    wget
+    curl
+    dosfstools
+    ntfs3g
+    waybar
+    xdg-desktop-portal-hyprland
+    grim
+    slurp
+    feh
+    chromium
 
-      # cli
-      neofetch
-      fastfetch
-      onefetch
-      vim
-      weechat
-      ranger
-      eza
-      fzf
+    # cli
+    neofetch
+    fastfetch
+    onefetch
+    vim
+    weechat
+    ranger
+    eza
+    fzf
 
-      # dev
-      rustup
-      python3
-      nodejs
-      gccgo14
-      go
-      nixd
+    # dev
+    rustup
+    python3
+    nodejs
+    gccgo14
+    go
+    nixd
 
-      # misc		
-      cava
-      discord
-
-      wezterm
-    ])
-    ++ (with pkgs-stable; [
-      wezterm
-    ]);
-
-  networking = {
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [
-        80
-        1337
-        8080
-      ];
-    };
-  };
-
+    # misc
+    cava
+    discord
+  ];
   security = {
     doas = {
       enable = true;
@@ -166,21 +157,26 @@
     };
   };
 
-  fonts.fontconfig.enable = true;
-  fonts.fontDir.enable = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-emoji
-    liberation_ttf
-    fira-code
-    fira-code-symbols
-    fantasque-sans-mono
-    mplus-outline-fonts.githubRelease
-    dina-font
-    proggyfonts
-    nerdfonts
-  ];
-
+  fonts = {
+    fontconfig.enable = true;
+    fonts = {
+      fontDir.enable = true;
+      packages =
+        with pkgs;
+        [
+          noto-fonts
+          noto-fonts-emoji
+          liberation_ttf
+          fira-code
+          fira-code-symbols
+          fantasque-sans-mono
+          mplus-outline-fonts.githubRelease
+          dina-font
+          proggyfonts
+        ]
+        ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+    };
+  };
   system.stateVersion = "unstable";
 
 }
