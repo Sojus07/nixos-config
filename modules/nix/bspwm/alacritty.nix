@@ -4,37 +4,37 @@
     alacritty = {
       enable = true;
       settings = {
-        terminal.shell = {
-          program = "tmux";
-        };
+        #terminal.shell = {
+        #  program = "tmux";
+        #};
         colors = {
           primary = {
-            background = "#282828";
-            foreground = "#ebdbb2";
+            background = "#161616";
+            foreground = "#ffffff";
           };
           normal = {
-            black = "#282828";
-            red = "#cc241d";
-            green = "#98971a";
-            yellow = "#d79921";
-            blue = "#458588";
-            magenta = "#b16286";
-            cyan = "#689d6a";
-            white = "#a89984";
+            black = "#262626";
+            magenta = "#ff7eb6";
+            green = "#42be65";
+            yellow = "#ffe97b";
+            blue = "#33b1ff";
+            red = "#ee5396";
+            cyan = "#3ddbd9";
+            white = "#dde1e6";
           };
           bright = {
-            black = "#928374";
-            red = "#fb4934";
-            green = "#b8bb26";
-            yellow = "#fabd2f";
-            blue = "#83a598";
-            magenta = "#d3869b";
-            cyan = "#8ec07c";
-            white = "#ebdbb2";
+            black = "#393939";
+            magenta = "#ff7eb6";
+            green = "#42be65";
+            yellow = "#ffe97b";
+            blue = "#33b1ff";
+            red = "#ee5396";
+            cyan = "#3ddbd9";
+            white = "#ffffff";
           };
         };
         font = {
-          size = 20;
+          size = 10;
           normal = {
             family = "FantasqueSansMNerdFont";
           };

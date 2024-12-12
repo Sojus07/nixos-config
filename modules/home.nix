@@ -9,7 +9,7 @@
     ./nix/user.nix
     ./nix/nvim/default.nix
     ./nix/hypr/default.nix
-    #./nix/bspwm/default.nix
+    ./nix/bspwm/default.nix
   ];
 
   home = {

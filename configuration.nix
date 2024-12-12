@@ -159,23 +159,20 @@
 
   fonts = {
     fontconfig.enable = true;
-    fonts = {
-      fontDir.enable = true;
-      packages =
-        with pkgs;
-        [
-          noto-fonts
-          noto-fonts-emoji
-          liberation_ttf
-          fira-code
-          fira-code-symbols
-          fantasque-sans-mono
-          mplus-outline-fonts.githubRelease
-          dina-font
-          proggyfonts
-        ]
-        ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-    };
+		packages =
+			with pkgs;
+			[
+				noto-fonts
+				noto-fonts-emoji
+				liberation_ttf
+				fira-code
+				fira-code-symbols
+				fantasque-sans-mono
+				mplus-outline-fonts.githubRelease
+				dina-font
+				proggyfonts
+			]
+			++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
   system.stateVersion = "unstable";
 

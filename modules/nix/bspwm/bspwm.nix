@@ -33,7 +33,7 @@
     };
     extraConfig = ''
       sxhkd -c ~/.config/sxhkd/sxhkdrc & 
-      ${pkgs.feh}/bin/feh --bg-fill ~/.wp/gruvbox-dark-blue.png &
+      ${pkgs.feh}/bin/feh --bg-fill ~/.wp/anime_blue.png &
       bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 
