@@ -31,9 +31,8 @@ in
           completeopt = "menu,menuone,noinsert,noselect";
           keyword_length = 1;
         };
-        sorting =
-          {
-          };
+        sorting = {
+        };
         mapping = {
           "<Down>".__raw = ''
             cmp.mapping(function(fallback)
@@ -45,7 +44,7 @@ in
             end, { "i", "s" })
           '';
 
-          "<S-Tab>".__raw = ''
+          "<Up>".__raw = ''
             cmp.mapping(function(fallback)
               if cmp.visible() then
                 cmp.select_prev_item()
@@ -54,7 +53,7 @@ in
               end
             end, { "i", "s" })
           '';
-          "<C-n>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-Down>" = "cmp.mapping.scroll_docs(-4)";
           "<c-Up>" = "cmp.mapping.scroll_docs(4)";
           "<C-Space>" = "cmp.mapping.complete()";
           "<C-e>" = "cmp.mapping.abort()";

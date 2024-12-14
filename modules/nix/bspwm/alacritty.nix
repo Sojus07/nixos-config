@@ -34,7 +34,7 @@
           };
         };
         font = {
-          size = 10;
+          size = 15;
           normal = {
             family = "FantasqueSansMNerdFont";
           };

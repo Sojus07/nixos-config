@@ -19,5 +19,8 @@
   programs.nixvim = {
     enable = true;
     colorschemes.oxocarbon.enable = true;
+    plugins = {
+      neocord.enable = true;
+    };
   };
 }
