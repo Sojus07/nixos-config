@@ -132,6 +132,8 @@
     ranger
     eza
     fzf
+    htop
+    btop
 
     # dev
     rustup
@@ -144,9 +146,9 @@
     # misc
     cava
     discord
-
-    python3Packages.adblock
+  
   ];
+
   security = {
     doas = {
       enable = true;
