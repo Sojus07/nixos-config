@@ -35,8 +35,8 @@
     };
     git = {
       enable = true;
-      userName = "meml0rz";
-      userEmail = "meml0rz";
+      userName = "fqbn207";
+      userEmail = "fqbn207";
     };
     tmux = {
       enable = true;

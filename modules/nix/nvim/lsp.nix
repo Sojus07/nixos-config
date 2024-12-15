@@ -15,11 +15,21 @@
       enable = true;
       inlayHints = true;
       servers = {
+        csharp_ls = {
+          enable = true;
+          autostart = true;
+        };
+        bashls = {
+          enable = true;
+          autostart = true;
+        };
         html = {
           enable = true;
+          autostart = true;
         };
         lua_ls = {
           enable = true;
+          autostart = true;
         };
         nixd = {
           enable = true;
@@ -34,12 +44,15 @@
         };
         asm_lsp = {
           enable = true;
+          autostart = true;
         };
         pyright = {
           enable = true;
+          autostart = true;
         };
         gopls = {
           enable = true;
+          autostart = true;
         };
         rust_analyzer = {
           enable = true;
@@ -48,6 +61,14 @@
           installCargo = true;
         };
         clangd = {
+          enable = true;
+          autostart = true;
+        };
+        omnisharp = {
+            enable = true;
+            autostart = true;
+          };
+        arduino_language_server = {
           enable = true;
           autostart = true;
         };

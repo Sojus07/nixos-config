@@ -16,7 +16,20 @@
     "nix-command"
     "flakes"
   ];
-  boot.loader.systemd-boot.enable = true;
+
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+      grub = {
+        enable = false;
+        device = "/dev/sda";
+        useOSProber = true;
+      };
+    };
+    supportedFilesystems = [ "ntfs" ];
+  };
 
   networking = {
     hostName = "poggers";
@@ -122,6 +135,9 @@
     slurp
     feh
     gnumake
+    flameshot
+    tree
+    gdb
 
     # cli
     neofetch
@@ -142,11 +158,16 @@
     gccgo14
     go
     nixd
+    arduino-cli
+    arduino-ide
+    arduino-language-server
+    dotnet-sdk
 
     # misc
     cava
     discord
-  
+    pacman
+
   ];
 
   security = {
@@ -179,6 +200,12 @@
       ]
       ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
+
+  environment.etc = {
+    "makepkg.conf".source = "${pkgs.pacman}/etc/makepkg.conf";
+    "pacman.conf".source = ./modules/raw/pacman.conf;
+  };
+
   system.stateVersion = "unstable";
 
 }
