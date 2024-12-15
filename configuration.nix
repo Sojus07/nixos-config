@@ -138,6 +138,7 @@
     flameshot
     tree
     gdb
+    vscode
 
     # cli
     neofetch
