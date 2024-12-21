@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  stable,
   ...
 }:
 {
@@ -13,9 +12,6 @@
   ];
 
   home = {
-    packages = with stable; [
-
-    ];
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.05";
     file = {

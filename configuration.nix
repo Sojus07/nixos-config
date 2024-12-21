@@ -4,8 +4,12 @@
   pkgs,
   ...
 }:
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
 {
   imports = [
+    (import "${home-manager}/nixos")
     ./hardware-configuration.nix
     ./modules/nix/firefox.nix
     ./modules/nix/gaming.nix
@@ -207,6 +211,7 @@
     "pacman.conf".source = ./modules/raw/pacman.conf;
   };
 
-  system.stateVersion = "unstable";
+  system.stateVersion = "24.11";
+  home-manager.users.fabian = ./modules/home.nix;
 
 }
