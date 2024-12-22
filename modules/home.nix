@@ -5,15 +5,11 @@
 }:
 {
   imports = [
-    ./nix/user.nix
-    ./nix/nvim/default.nix
-    ./nix/hypr/default.nix
-    ./nix/bspwm/default.nix
+    ./nix
   ];
-
   home = {
     enableNixpkgsReleaseCheck = false;
-    stateVersion = "24.05";
+    stateVersion = "24.11";
     file = {
       ".wp/temple.png".source = ./raw/wp/temple.png;
       ".wp/skull_purple.png".source = ./raw/wp/skull_purple.png;
