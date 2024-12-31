@@ -29,6 +29,7 @@
         bind -n M-Down select-pane -D
         set -g status-position top
         set status-bg default
+        set -g status-style "fg=white bg=color237"
       '';
     };
   };

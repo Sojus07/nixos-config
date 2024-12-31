@@ -46,9 +46,6 @@ in
   networking = {
     hostName = "poggers";
     networkmanager.enable = true;
-    nameservers = [
-      "192.168.0.125"
-    ];
     firewall = {
       enable = true;
       allowedTCPPorts = [
@@ -131,6 +128,8 @@ in
       "video"
       "dialout"
       "plugdev"
+      "adbusers"
+      "kvm"
     ];
   };
 
@@ -178,6 +177,10 @@ in
     arduino-ide
     arduino-language-server
     dotnet-sdk
+    bear
+    android-tools
+    android-udev-rules
+    android-studio-tools
 
     # misc
     cava
