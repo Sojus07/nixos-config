@@ -10,6 +10,8 @@
       toggleterm.enable = true;
       autoclose.enable = true;
       web-devicons.enable = true;
+      which-key.enable = true;
+      trouble.enable = true;
     };
   };
 }

@@ -130,7 +130,7 @@
       "interval": 5
     },
     "modules-center": [
-    	"custom/playerlabel",
+    	"wlr/workspaces",
     ],
     "modules-left": [
       "cava#left",
@@ -140,9 +140,12 @@
     ],
     "modules-right": [
         "tray",
+        "memory",
+        "cpu",
         "battery",
         "pulseaudio",
-        "network",      
+        "network",
+        "clock",
     ],
 
     "network": {
@@ -171,7 +174,7 @@
       "spacing": 8
     },
     "wlr/workspaces": {
-      "active-only": false,
+      "active-only": true,
       "all-outputs": false,
       "disable-scroll": false,
       "format": "{name}",

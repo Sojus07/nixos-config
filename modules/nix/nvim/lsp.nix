@@ -65,9 +65,9 @@
           autostart = true;
         };
         omnisharp = {
-            enable = true;
-            autostart = true;
-          };
+          enable = true;
+          autostart = true;
+        };
         arduino_language_server = {
           enable = true;
           autostart = true;

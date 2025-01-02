@@ -23,9 +23,15 @@ in
 
   systemd = {
     services = {
+      modem-manager.enable = false;
       mpd.environment = {
         XDG_RUNTIME_DIR = "/run/user/1000";
       };
+      #pactl-pipe = {
+      #  description = "Load Pactl Pipe for Audio";
+      #  wantedBy = [ "multi-user.target" ];
+      #  serviceConfig.ExecStart = "${pkgs.pulseaudio}/bin/pactl load-module module-null-sink sink_name=virtual_sink";
+      #};
     };
   };
 
@@ -102,6 +108,9 @@ in
     rtl-sdr = {
       enable = true;
     };
+    pulseaudio = {
+      enable = false;
+    };
   };
 
   programs = {
@@ -130,6 +139,7 @@ in
       "plugdev"
       "adbusers"
       "kvm"
+      "dialout"
     ];
   };
 
@@ -153,6 +163,9 @@ in
     tree
     gdb
     vscode
+    pavucontrol
+    usbutils
+    alsa-utils
 
     # cli
     neofetch
@@ -172,15 +185,41 @@ in
     nodejs
     gccgo14
     go
-    nixd
-    arduino-cli
-    arduino-ide
-    arduino-language-server
     dotnet-sdk
     bear
     android-tools
     android-udev-rules
     android-studio-tools
+
+    # embedded
+    espup
+    esphome
+    esptool
+    ethtool
+    espflash
+    minicom
+    pulseview
+    cp210x-program
+    arduino-ide
+    arduino-cli
+
+    # LSPs
+    nixd
+    arduino-language-server
+
+    # libs
+    python312Packages.pyserial
+
+    # SDR
+    noaa-apt
+    wsjtx
+    qsstv
+    gpredict
+    sdrangel
+    sdrpp
+    gnuradio
+    cubicsdr
+    gqrx
 
     # misc
     cava
