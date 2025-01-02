@@ -19,11 +19,11 @@
 
       vim.opt.shiftwidth = 2
       vim.opt.tabstop = 2 
+      vim.opt.softtabstop = 2
       vim.opt.cursorline = true
       vim.opt.expandtab = true
       vim.opt.autoindent = true
       vim.opt.smartindent = true
-      vim.opt.softtabstop = 4
       vim.opt.number = true
       vim.diagnostic.config({
           virtual_text = false,
