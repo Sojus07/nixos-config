@@ -86,7 +86,7 @@ in
       windowManager.bspwm.enable = true;
     };
     pipewire = {
-      enable = true;
+      enable = false;
       pulse.enable = true;
       wireplumber.enable = true;
     };
@@ -109,7 +109,7 @@ in
       enable = true;
     };
     pulseaudio = {
-      enable = false;
+      enable = true;
     };
   };
 
