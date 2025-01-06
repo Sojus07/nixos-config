@@ -7,7 +7,7 @@
 
   home = {
     file = {
-      ".config/rofi/rofi.rasi".source = ./raw/rofi.rasi;
+      ".config/rofi/config.rasi".source = ./raw/config.rasi;
     };
   };
 }

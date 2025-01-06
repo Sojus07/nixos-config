@@ -16,6 +16,8 @@
       ".wp/gruvbox-dark-blue.png".source = ./raw/wp/gruvbox-dark-blue.png;
       ".wp/anime_blue.png".source = ./raw/wp/anime_blue.png;
       ".wp/fuji.png".source = ./raw/wp/fuji.png;
+      ".wp/orbit.png".source = ./raw/wp/orbit.png;
+      ".wp/hollow_knight.png".source = ./raw/wp/hollow_knight.png;
     };
   };
 }

@@ -15,14 +15,14 @@
     config = rec {
       modifier = "Mod4";
       terminal = "alacritty";
-      menu = "${pkgs.rofi}/bin/rofi -show drun -c ~/.config/rofi/rofi.rasi";
+      menu = "${pkgs.rofi}/bin/rofi -show run -c ~/.config/rofi/config.rasi";
       bars = [
         {
           command = "wayff";
         }
       ];
       startup = [
-        { command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/fuji.png"; }
+        { command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/orbit.png"; }
       ];
       gaps = {
         outer = 5;
@@ -99,7 +99,7 @@
         corner_radius 12
         blur_radius 7
         blur_passes 4
-      	default_dim_inactive 0.4
+      	default_dim_inactive 0.1
       	for_window [app_id="Alacritty"] blur enable
         for_window [app_id="alacritty"] blur enable
 
