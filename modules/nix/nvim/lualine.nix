@@ -8,7 +8,12 @@
   programs.nixvim = {
     plugins = {
       lualine = {
-        enable = true;
+        enable = false;
+        settings = {
+          options = {
+            theme = "horizon";
+          };
+        };
       };
     };
   };

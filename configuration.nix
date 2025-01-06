@@ -34,7 +34,6 @@ in
       #};
     };
   };
-
   boot = {
     loader = {
       systemd-boot = {
@@ -58,6 +57,8 @@ in
         80
         1337
         8080
+        3000
+        8000
       ];
     };
   };
@@ -83,10 +84,14 @@ in
     xserver = {
       enable = true;
       displayManager.startx.enable = true;
-      windowManager.bspwm.enable = true;
+      windowManager = {
+        bspwm.enable = true;
+        dwm.enable = false;
+        i3.enable = true;
+      };
     };
     pipewire = {
-      enable = false;
+      enable = true;
       pulse.enable = true;
       wireplumber.enable = true;
     };
@@ -106,9 +111,6 @@ in
       enable = true;
     };
     rtl-sdr = {
-      enable = true;
-    };
-    pulseaudio = {
       enable = true;
     };
   };
@@ -209,6 +211,7 @@ in
 
     # libs
     python312Packages.pyserial
+    python312Packages.meshtastic
 
     # SDR
     noaa-apt
@@ -223,7 +226,7 @@ in
 
     # misc
     cava
-    discord
+    vesktop
     pacman
 
   ];

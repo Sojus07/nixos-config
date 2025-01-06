@@ -8,7 +8,6 @@ let
   nixvim = import (
     builtins.fetchGit {
       url = "https://github.com/nix-community/nixvim";
-      ref = "nixos-24.11";
     }
   );
 in
@@ -27,8 +26,31 @@ in
   ];
   programs.nixvim = {
     enable = true;
-    colorschemes.oxocarbon.enable = true;
     plugins = {
+      transparent = {
+        enable = true;
+        settings = {
+          groups = [
+            "Normal"
+            "NormalNC"
+            "CursorLine"
+            "StatusLine"
+            "StatusLineNC"
+            "EndOfBuffer"
+
+          ];
+          exclude_groups = [ ];
+          extra_groups = [
+            "BufferLineTabClose"
+            "BufferLineBufferSelected"
+            "BufferLineFill"
+            "BufferLineBackground"
+            "BufferLineSeparator"
+            "BufferLineIndicatorSelected"
+          ];
+        };
+      };
+
       neocord = {
         enable = true;
         settings = {

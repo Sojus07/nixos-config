@@ -15,6 +15,7 @@
       ".wp/skull_purple.png".source = ./raw/wp/skull_purple.png;
       ".wp/gruvbox-dark-blue.png".source = ./raw/wp/gruvbox-dark-blue.png;
       ".wp/anime_blue.png".source = ./raw/wp/anime_blue.png;
+      ".wp/fuji.png".source = ./raw/wp/fuji.png;
     };
   };
 }

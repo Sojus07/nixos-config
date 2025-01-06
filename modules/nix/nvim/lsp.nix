@@ -7,7 +7,7 @@
 {
   programs.nixvim.plugins = {
     clangd-extensions.enable = true;
-    crates-nvim.enable = true;
+    crates.enable = true;
     lsp-format = {
       enable = true;
     };
