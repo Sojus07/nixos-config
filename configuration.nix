@@ -127,6 +127,13 @@ in
     docker = {
       enable = true;
     };
+    virtualbox = {
+      host.enable = true;
+      guest = {
+        enable = true;
+        draganddrop = true;
+      };
+    };
   };
 
   users.users.fabian = {
@@ -142,6 +149,7 @@ in
       "adbusers"
       "kvm"
       "dialout"
+      "vboxusers"
     ];
   };
 
@@ -204,6 +212,12 @@ in
     cp210x-program
     arduino-ide
     arduino-cli
+    flashrom
+    binwalk
+    chirp
+    picocom
+    pwndbg
+    gdb
 
     # LSPs
     nixd
@@ -212,6 +226,9 @@ in
     # libs
     python312Packages.pyserial
     python312Packages.meshtastic
+
+    # virt
+    qemu
 
     # SDR
     noaa-apt
