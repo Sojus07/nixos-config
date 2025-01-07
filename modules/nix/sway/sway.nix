@@ -39,7 +39,7 @@
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+Q" = "kill";
         "${modifier}+Shift+R" = "reload";
-        "${modifier}+Shift+S" = "grim -g '$(slurp)'";
+        "${modifier}+Shift+S" = "${pkgs.shotman}/bin/shotman --capture region";
         # WINDOW STUFF #
         "${modifier}+Shift+space" = "floating toggle";
         "${modifier}+Shift+F" = "fullscreen toggle";

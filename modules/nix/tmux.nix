@@ -19,6 +19,7 @@
         bind - split-window -v
         unbind '"'
         unbind %
+
         bind t new-window
         bind -n M-q previous-window
         bind -n M-e next-window
@@ -28,12 +29,12 @@
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
 
+        set-option -s status-interval 1
         set -g status-right-length 100
-
-        set -g @net_speed_interfaces "wg0-mullvad enp2s0f0u1"
-        set -g @download_speed_format "%3s"
-        set -g @upload_speed_format "%3s"
-        set -g @net_speed_format "D:%3s U:%3s"
+        set -g @net_speed_interfaces "wg0-mullvad"
+        set -g @download_speed_format "%1s"
+        set -g @upload_speed_format "%1s"
+        set -g @net_speed_format "D:%1s U:%1s"
 
         set -g status-right '#{battery_icon} #{battery_percentage} [󰈀  #{net_speed}] [   #{cpu_percentage}] [  %H:%M] '
 

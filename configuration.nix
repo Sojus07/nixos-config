@@ -233,6 +233,7 @@ in
     gnuradio
     cubicsdr
     gqrx
+    multimon-ng
 
     # misc
     cava
