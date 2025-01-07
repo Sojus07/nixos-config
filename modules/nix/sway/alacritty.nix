@@ -4,6 +4,9 @@
     enable = true;
 
     settings = {
+      terminal = {
+        shell = "tmux";
+      };
       window = {
         opacity = 0.8;
         blur = true;

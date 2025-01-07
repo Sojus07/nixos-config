@@ -39,6 +39,18 @@ in
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
             installation_mode = "force_installed";
           };
+          "78272b6fa58f4a1abaac99321d503a20@proton.me" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/proton-pass/latest.xpi";
+            installation_mode = "force_installed";
+          };
+          "addon@darkreader.org" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+            installation_mode = "force_installed";
+          };
+          "{9b84b6b4-07c4-4b4b-ba21-394d86f6e9ee}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/3954735/black21-3.0.2.xpi";
+            installation_mode = "force_installed";
+          };
         };
       };
       preferences = {
