@@ -127,13 +127,6 @@ in
     docker = {
       enable = true;
     };
-    virtualbox = {
-      host.enable = true;
-      guest = {
-        enable = true;
-        draganddrop = true;
-      };
-    };
   };
 
   users.users.fabian = {
@@ -149,7 +142,6 @@ in
       "adbusers"
       "kvm"
       "dialout"
-      "vboxusers"
     ];
   };
 
@@ -218,6 +210,7 @@ in
     picocom
     pwndbg
     gdb
+    minipro
 
     # LSPs
     nixd

@@ -22,14 +22,27 @@
         bind t new-window
         bind -n M-q previous-window
         bind -n M-e next-window
-        bind r source-file ~/.tmux.conf
+        bind r source-file ~/.config/tmux/tmux.conf
         bind -n M-Left select-pane -L
         bind -n M-Right select-pane -R
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
+
+        set -g status-right-length 100
+
+        set -g @net_speed_interfaces "wg0-mullvad enp2s0f0u1"
+        set -g @download_speed_format "%3s"
+        set -g @upload_speed_format "%3s"
+        set -g @net_speed_format "D:%3s U:%3s"
+
+        set -g status-right '#{battery_icon} #{battery_percentage} [󰈀  #{net_speed}] [   #{cpu_percentage}] [  %H:%M] '
+
+        run-shell ${pkgs.tmuxPlugins.net-speed}/share/tmux-plugins/net-speed/net_speed.tmux 
+        run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
+        #run-shell ${pkgs.tmuxPlugins.battery}/share/tmux-plugins/battery/battery.tmux
+
         set -g status-position top
-        set status-bg default
-        set -g status-style "fg=white bg=color237"
+        set-option -g status-style bg=default
       '';
     };
   };
