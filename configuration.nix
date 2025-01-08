@@ -168,6 +168,7 @@ in
     pavucontrol
     usbutils
     alsa-utils
+    neovide
 
     # cli
     neofetch
@@ -277,7 +278,7 @@ in
     "pacman.conf".source = ./modules/raw/pacman.conf;
   };
 
-  system.stateVersion = "24.11";
+  system.stateVersion = "unstable";
   home-manager.users.fabian = ./modules/home.nix;
 
 }

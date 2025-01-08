@@ -21,13 +21,16 @@
         unbind %
 
         bind t new-window
-        bind -n M-q previous-window
+        bind -n M-w previous-window
         bind -n M-e next-window
         bind r source-file ~/.config/tmux/tmux.conf
         bind -n M-Left select-pane -L
         bind -n M-Right select-pane -R
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
+
+        setw -g window-status-current-format "#T(#I:#W#F)"  
+        setw -g window-status-format "#T(#I:#W#F)"  
 
         set-option -s status-interval 1
         set -g status-right-length 100

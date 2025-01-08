@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./nvim/default.nix
-    ./sway/default.nix
+    ./editors/nvim/default.nix
+    ./wm/sway/default.nix
     ./bash.nix
     ./git.nix
     ./tmux.nix

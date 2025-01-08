@@ -28,7 +28,7 @@ in
     enable = true;
     plugins = {
       transparent = {
-        enable = true;
+        enable = false;
         settings = {
           groups = [
             "Normal"

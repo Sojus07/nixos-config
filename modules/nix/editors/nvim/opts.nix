@@ -37,12 +37,6 @@
           virtual_lines = false,
       })
 
-      vim.api.nvim_create_autocmd("VimEnter", {
-        callback = function()
-          vim.cmd("TransparentEnable")
-        end,
-      })
-
       vim.cmd [[
         hi VertSplit guibg=NONE guifg=#000000
         cnoreabbrev W! w!
