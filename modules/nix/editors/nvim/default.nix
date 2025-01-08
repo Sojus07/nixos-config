@@ -19,7 +19,6 @@ in
     ./neotree.nix
     ./opts.nix
     ./lualine.nix
-    ./alpha.nix
     ./dev.nix
     ./nonels.nix
     ./treesitter.nix

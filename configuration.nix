@@ -27,11 +27,6 @@ in
       mpd.environment = {
         XDG_RUNTIME_DIR = "/run/user/1000";
       };
-      #pactl-pipe = {
-      #  description = "Load Pactl Pipe for Audio";
-      #  wantedBy = [ "multi-user.target" ];
-      #  serviceConfig.ExecStart = "${pkgs.pulseaudio}/bin/pactl load-module module-null-sink sink_name=virtual_sink";
-      #};
     };
   };
   boot = {
@@ -70,25 +65,15 @@ in
   };
 
   xdg.portal = {
-    enable = true;
+    enable = false;
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
     ];
   };
 
   services = {
     libinput = {
       enable = true;
-    };
-    xserver = {
-      enable = true;
-      displayManager.startx.enable = true;
-      windowManager = {
-        bspwm.enable = true;
-        dwm.enable = false;
-        i3.enable = true;
-      };
     };
     pipewire = {
       enable = true;
@@ -116,10 +101,6 @@ in
   };
 
   programs = {
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
     nix-ld.enable = true;
   };
 
@@ -270,7 +251,6 @@ in
       proggyfonts
       nerdfonts
     ];
-    #++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
   };
 
   environment.etc = {

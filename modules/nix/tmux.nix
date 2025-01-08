@@ -29,8 +29,8 @@
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
 
-        setw -g window-status-current-format "#T(#I:#W#F)"  
-        setw -g window-status-format "#T(#I:#W#F)"  
+        setw -g window-status-current-format "[ #W ]"  
+        setw -g window-status-format "#W"  
 
         set-option -s status-interval 1
         set -g status-right-length 100
