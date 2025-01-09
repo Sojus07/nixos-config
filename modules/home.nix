@@ -18,6 +18,10 @@
       ".wp/fuji.png".source = ./raw/wp/fuji.png;
       ".wp/orbit.png".source = ./raw/wp/orbit.png;
       ".wp/hollow_knight.png".source = ./raw/wp/hollow_knight.png;
+      ".wp/ios.png".source = ./raw/wp/ios.png;
+      ".wp/manga.png".source = ./raw/wp/manga.png;
+      ".wp/bg.png".source = ./raw/wp/bg.png;
+      ".wp/wolf.png".source = ./raw/wp/wolf.png;
     };
   };
 }

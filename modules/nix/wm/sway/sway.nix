@@ -22,7 +22,7 @@
         }
       ];
       startup = [
-        { command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/orbit.png"; }
+        { command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/ios.png"; }
       ];
       gaps = {
         outer = 5;

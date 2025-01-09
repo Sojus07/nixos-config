@@ -13,7 +13,7 @@
       };
       shellAliases = {
         http = "python3 -m http.server";
-        rm = "rm -rfv";
+        rm = "rm $@ -v -I";
         ls = "${pkgs.eza}/bin/eza -l --icons";
         cp = "cp -rv";
         mv = "mv -v";
@@ -29,8 +29,7 @@
       ];
       initExtra = ''
         eval "$(fzf --bash)"
-        PS1="\w % "
-
+        complete -cf doas 
       '';
     };
   };
