@@ -30,7 +30,7 @@
       vim.opt.expandtab = true
       vim.opt.autoindent = true
       vim.opt.smartindent = true
-      vim.opt.number = true
+      vim.opt.relativenumber = true
       vim.diagnostic.config({
           virtual_text = true,
           virtual_lines = true,
@@ -38,6 +38,7 @@
 
       vim.cmd [[
         hi VertSplit guibg=NONE guifg=#000000
+        set laststatus=0 ruler
         set notermguicolors
         cnoreabbrev W! w!
         cnoreabbrev Q! q!

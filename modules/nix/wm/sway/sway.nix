@@ -81,8 +81,8 @@
         "${modifier}+Shift+9" = "move container to workspace number 9";
 
         # Audio
-        "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+";
-        "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-";
+        "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
+        "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
         "XF86AudioMute" = "exec set-volume toggle-mute";
         "XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
@@ -100,7 +100,8 @@
         blur_radius 7
         blur_passes 4
       	default_dim_inactive 0.1
-      	for_window [app_id="Alacritty"] blur enable
+      	
+        for_window [app_id="Alacritty"] blur enable
         for_window [app_id="alacritty"] blur enable
 
         for_window [app_id="Firefox"] blur enable
@@ -112,6 +113,7 @@
         for_window [app_id="code"] blur enable
       	
         for_window [app_id="rofi"] blur enable
+        
         default_border pixel 0px
         default_floating_border none
         titlebar_border_thickness 0
