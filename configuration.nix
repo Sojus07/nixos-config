@@ -13,6 +13,7 @@ in
     ./hardware-configuration.nix
     ./modules/nix/firefox.nix
     ./modules/nix/gaming.nix
+    ./modules/nix/X/dwm/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -72,11 +73,6 @@ in
   };
 
   services = {
-    xserver = {
-      enable = true;
-      displayManager.startx.enable = true;
-      windowManager.i3.enable = true;
-    };
     libinput = {
       enable = true;
     };
