@@ -16,13 +16,6 @@
       map('v', '<Tab>', '>gv', opts)
       map('v', '<S-Tab>', '<gv', opts)
 
-      vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
-      vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
-
-      vim.cmd("highlight Pmenu guibg=NONE")
-
       vim.opt.shiftwidth = 2
       vim.opt.tabstop = 2 
       vim.opt.softtabstop = 2
@@ -37,9 +30,6 @@
       })
 
       vim.cmd [[
-        hi VertSplit guibg=NONE guifg=#000000
-        set laststatus=0 ruler
-        set notermguicolors
         cnoreabbrev W! w!
         cnoreabbrev Q! q!
         cnoreabbrev Qall! qall!

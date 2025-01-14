@@ -18,38 +18,14 @@ in
     ./lsp.nix
     ./neotree.nix
     ./opts.nix
-    ./lualine.nix
     ./dev.nix
     ./nonels.nix
     ./treesitter.nix
   ];
   programs.nixvim = {
     enable = true;
+    colorschemes.oxocarbon.enable = true;
     plugins = {
-      transparent = {
-        enable = false;
-        settings = {
-          groups = [
-            "Normal"
-            "NormalNC"
-            "CursorLine"
-            "StatusLine"
-            "StatusLineNC"
-            "EndOfBuffer"
-
-          ];
-          exclude_groups = [ ];
-          extra_groups = [
-            "BufferLineTabClose"
-            "BufferLineBufferSelected"
-            "BufferLineFill"
-            "BufferLineBackground"
-            "BufferLineSeparator"
-            "BufferLineIndicatorSelected"
-          ];
-        };
-      };
-
       neocord = {
         enable = true;
         settings = {
