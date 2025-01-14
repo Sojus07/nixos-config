@@ -28,6 +28,8 @@
         "checkjobs"
       ];
       initExtra = ''
+        PS1 = "(\u) %"
+
         eval "$(fzf --bash)"
         complete -cf doas 
       '';

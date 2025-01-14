@@ -11,9 +11,7 @@ in
   imports = [
     (import "${home-manager}/nixos")
     ./hardware-configuration.nix
-    ./modules/nix/firefox.nix
-    ./modules/nix/gaming.nix
-    ./modules/nix/X/dwm/default.nix
+    ./modules/system/nix/default.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -257,10 +255,10 @@ in
 
   environment.etc = {
     "makepkg.conf".source = "${pkgs.pacman}/etc/makepkg.conf";
-    "pacman.conf".source = ./modules/raw/pacman.conf;
+    "pacman.conf".source = ./modules/system/raw/pacman.conf;
   };
 
   system.stateVersion = "unstable";
-  home-manager.users.fabian = ./modules/home.nix;
+  home-manager.users.fabian = ./modules/home/home.nix;
 
 }

@@ -2,9 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     dmenu
-    (st.overrideAttrs (oldAttrs: rec {
-      configFile = writeText "config.def.h" (builtins.readFile ./source/st/config.def.h);
-    }))
   ];
   services = {
     xserver = {

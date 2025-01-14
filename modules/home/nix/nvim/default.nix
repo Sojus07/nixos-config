@@ -21,6 +21,7 @@ in
     ./dev.nix
     ./nonels.nix
     ./treesitter.nix
+    ./lualine.nix
   ];
   programs.nixvim = {
     enable = true;
