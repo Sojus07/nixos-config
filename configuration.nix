@@ -4,17 +4,20 @@
   pkgs,
   ...
 }:
-let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
-in
 {
   imports = [
-    (import "${home-manager}/nixos")
     ./hardware-configuration.nix
     ./modules/system/nix/default.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [
+        "freeimage-unstable-2021-11-01"
+      ];
+    };
+  };
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -166,6 +169,7 @@ in
     fzf
     htop
     btop
+    kew
 
     # dev
     rustup
@@ -264,6 +268,5 @@ in
   };
 
   system.stateVersion = "unstable";
-  home-manager.users.fabian = ./modules/home/home.nix;
 
 }

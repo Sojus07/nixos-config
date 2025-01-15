@@ -54,12 +54,6 @@
           enable = true;
           autostart = true;
         };
-        rust_analyzer = {
-          enable = true;
-          autostart = true;
-          installRustc = true;
-          installCargo = true;
-        };
         clangd = {
           enable = true;
           autostart = true;
@@ -71,6 +65,32 @@
         arduino_language_server = {
           enable = true;
           autostart = true;
+        };
+      };
+    };
+    rustaceanvim = {
+      enable = true;
+      settings = {
+        server = {
+          cmd = [
+            "rustup"
+            "run"
+            "nightly"
+            "rust-analyzer"
+          ];
+          default_settings = {
+            rust-analyzer = {
+              check = {
+                command = "clippy";
+              };
+              inlayHints = {
+                lifetimeElisionHints = {
+                  enable = "always";
+                };
+              };
+            };
+          };
+          standalone = false;
         };
       };
     };
