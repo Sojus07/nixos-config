@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./nvim/default.nix
+    #./nixvim/default.nix
     ./alacritty.nix
     ./shell.nix
     ./git.nix

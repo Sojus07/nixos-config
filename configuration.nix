@@ -258,7 +258,8 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
-      nerdfonts
+      pkgs.nerd-fonts._0xproto
+      pkgs.nerd-fonts.droid-sans-mono
     ];
   };
 
