@@ -84,8 +84,8 @@ static const char *termcmd[] = {"alacritty", NULL};
 static const char *dmenucmd[] = {
     "dmenu_run", "-m",      dmenumon, "-fn",    dmenufont, "-nb",     col_gray1,
     "-nf",       col_gray3, "-sb",    col_cyan, "-sf",     col_gray4, NULL};
-static const char *upvol[] = {"wpctl", "set-sink-volume",
-                              "@DEFAULT_AUDIO_SINK@", "5%-", NULL};
+static const char *upvol[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@",
+                              "5%+", NULL};
 static const char *downvol[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@",
                                 "5%-", NULL};
 static const char *mutevol[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@",

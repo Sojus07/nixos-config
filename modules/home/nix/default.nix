@@ -3,7 +3,7 @@
   imports = [
     ./nvim/default.nix
     ./alacritty.nix
-    ./bash.nix
+    ./shell.nix
     ./git.nix
     ./tmux.nix
     ./mpd.nix

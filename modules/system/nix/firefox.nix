@@ -47,8 +47,8 @@ in
             install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
             installation_mode = "force_installed";
           };
-          "{9b84b6b4-07c4-4b4b-ba21-394d86f6e9ee}" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/file/3954735/black21-3.0.2.xpi";
+          "{f5bcc922-5c09-4ba5-9611-d7931812785c}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/file/4354513/oxocarbon-1.0.xpi";
             installation_mode = "force_installed";
           };
         };

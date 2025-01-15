@@ -101,6 +101,7 @@ in
 
   programs = {
     nix-ld.enable = true;
+    fish.enable = true;
   };
 
   virtualisation = {
@@ -109,20 +110,24 @@ in
     };
   };
 
-  users.users.fabian = {
-    isNormalUser = true;
-    initialPassword = "1601";
-    extraGroups = [
-      "wheel"
-      "docker"
-      "audio"
-      "video"
-      "dialout"
-      "plugdev"
-      "adbusers"
-      "kvm"
-      "dialout"
-    ];
+  users = {
+    users = {
+      fabian = {
+        isNormalUser = true;
+        initialPassword = "1601";
+        extraGroups = [
+          "wheel"
+          "docker"
+          "audio"
+          "video"
+          "dialout"
+          "plugdev"
+          "adbusers"
+          "kvm"
+          "dialout"
+        ];
+      };
+    };
   };
 
   environment.systemPackages = with pkgs; [
