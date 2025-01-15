@@ -3,15 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nvf.url = "github:notashelf/nvf";
   };
 
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     nvf,
   }: {
     packages."x86_64-linux".default =
@@ -25,14 +22,6 @@
       modules = [
         ./configuration.nix
         nvf.homeManagerModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.fabian = import ./modules/home/home.nix;
-          };
-        }
       ];
     };
   };

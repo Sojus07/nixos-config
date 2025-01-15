@@ -3,8 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in {
   imports = [
     ./hardware-configuration.nix
     ./modules/system/nix/default.nix
@@ -42,7 +43,7 @@
         useOSProber = true;
       };
     };
-    supportedFilesystems = [ "ntfs" ];
+    supportedFilesystems = ["ntfs"];
   };
 
   networking = {
@@ -230,7 +231,6 @@
     vesktop
     pacman
     wf-recorder
-
   ];
 
   security = {
@@ -238,7 +238,7 @@
       enable = true;
       extraRules = [
         {
-          users = [ "fabian" ];
+          users = ["fabian"];
           noPass = true;
           keepEnv = true;
         }
@@ -270,4 +270,5 @@
 
   system.stateVersion = "unstable";
 
+  home-manager.users.fabian = ./modules/home/home.nix;
 }
