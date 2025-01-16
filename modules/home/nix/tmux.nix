@@ -7,6 +7,7 @@
         tmuxPlugins.net-speed
         tmuxPlugins.cpu
         tmuxPlugins.battery
+        tmuxPlugins.gruvbox
       ];
       disableConfirmationPrompt = true;
       mouse = true;
@@ -29,10 +30,8 @@
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
 
-        set-option -g default-shell fish
-
-        setw -g window-status-current-format "[ #W ]"  
-        setw -g window-status-format "#W"  
+        #setw -g window-status-current-format "[ #W ]"  
+        #setw -g window-status-format "#W"  
 
         set-option -s status-interval 1
         set -g status-right-length 100
@@ -48,7 +47,7 @@
         #run-shell ${pkgs.tmuxPlugins.battery}/share/tmux-plugins/battery/battery.tmux
 
         set -g status-position top
-        set-option -g status-style bg=default
+        #set-option -g status-style bg=default
       '';
     };
   };

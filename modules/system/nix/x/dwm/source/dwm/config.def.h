@@ -10,17 +10,15 @@ static int smartgaps =
     0; /* 1 means no outer gap when there is only one window */
 static const int showbar = 1; /* 0 means no bar */
 static const int topbar = 1;  /* 0 means bottom bar */
-static const char *fonts[] = {"Terminus:size=10"};
-static const char dmenufont[] = "Terminus:size=10";
+static const char *fonts[] = {"Fantasque Sans Mono:size=10"};
+static const char dmenufont[] = "Fantasque Sans Mono:size=10";
 
-/* Farben aus Alacritty übernommen */
-static const char col_gray1[] = "#161616";
+static const char col_gray1[] = "#262626";
 static const char col_gray2[] = "#ffffff";
 static const char col_gray3[] = "#dde1e6";
 static const char col_gray4[] = "#ffffff";
-static const char col_cyan[] = "#161616";
+static const char col_cyan[] = "#262626";
 
-/* Farbschema für die Fenster und die Leiste */
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_gray3, col_gray1, col_gray1}, /* Normale Fenster */
@@ -90,11 +88,13 @@ static const char *downvol[] = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@",
                                 "5%-", NULL};
 static const char *mutevol[] = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@",
                                 "toggle", NULL};
+static const char *screenshot[] = {"flameshot", "gui", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_space, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
+    {MODKEY|ShiftMask, XK_s, spawn, {.v = screenshot}},
     {MODKEY | ShiftMask, XK_m, quit, {0}},
     {MODKEY, XK_Right, focusstack, {.i = +1}},
     {MODKEY, XK_Left, focusstack, {.i = -1}},
