@@ -114,8 +114,11 @@
   };
 
   users = {
+    defaultUserShell = pkgs.fish;
     users = {
       fabian = {
+        useDefaultShell = true;
+        shell = pkgs.fish;
         isNormalUser = true;
         initialPassword = "1601";
         extraGroups = [

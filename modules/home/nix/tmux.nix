@@ -29,6 +29,8 @@
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
 
+        set-option -g default-shell fish
+
         setw -g window-status-current-format "[ #W ]"  
         setw -g window-status-format "#W"  
 
