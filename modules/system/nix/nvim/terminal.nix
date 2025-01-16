@@ -3,10 +3,12 @@
   lib,
   ...
 }: {
-  vim = {
+  programs.nvf.settings.vim = {
     terminal = {
-      enable = true;
-      lazygit.enable = true;
+      toggleterm = {
+        enable = true;
+        lazygit.enable = true;
+      };
     };
   };
 }

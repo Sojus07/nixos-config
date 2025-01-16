@@ -17,7 +17,7 @@
         extraLuaFiles = [
           (builtins.path {
             path = ./raw/opts.lua;
-            name = "opts.lua";
+            name = "opts.lua"
           })
         ];
         autopairs.nvim-autopairs.enable = true;

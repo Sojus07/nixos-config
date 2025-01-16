@@ -3,13 +3,22 @@
   lib,
   ...
 }: {
-  vim = {
+  programs.nvf.settings.vim = {
     languages = {
       clang = {
         enable = true;
         dap.enable = true;
         treesitter.enable = true;
         lsp.enable = true;
+      };
+      python = {
+        enable = true;
+      };
+      go = {
+        enable = true;
+      };
+      lua = {
+        enable = true;
       };
       rust = {
         enable = true;
