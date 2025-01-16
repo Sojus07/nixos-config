@@ -7,8 +7,8 @@
     ./lsp.nix
     ./terminal.nix
     ./neotree.nix
-    ./opts.nix
     ./cmp.nix
+    ./lualine.nix
   ];
   programs.nvf = {
     enable = true;
@@ -21,9 +21,6 @@
           })
         ];
         autopairs.nvim-autopairs.enable = true;
-        statusline.lualine = {
-          enable = true;
-        };
         telescope.enable = true;
         theme = {
           enable = true;

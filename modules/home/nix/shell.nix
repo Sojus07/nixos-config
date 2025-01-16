@@ -23,7 +23,7 @@
         cp = "cp -rv";
         mv = "mv -v";
         mkdir = "mkdir -pv";
-        update = "doas nixos-rebuild switch";
+        update = "sudo nixos-rebuild switch --flake /etc/nixos#poggers --impure";
       };
       plugins = [
         {

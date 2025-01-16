@@ -33,6 +33,27 @@
           autotagHtml = true;
         };
       };
+      css = {
+        enable = true;
+        treesitter.enable = true;
+        lsp.enable = true;
+      };
+      assembly = {
+        enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
+      bash = {
+        enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
+      };
+      ts = {
+        enable = true;
+        extraDiagnostics.enable = true;
+        treesitter.enable = true;
+        lsp.enable = true;
+      };
       nix = {
         enable = true;
         extraDiagnostics = {
