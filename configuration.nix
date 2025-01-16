@@ -185,6 +185,9 @@
     android-tools
     android-udev-rules
     android-studio-tools
+    
+    wine
+    winetricks
 
     # embedded
     espup
