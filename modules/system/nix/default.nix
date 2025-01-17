@@ -9,6 +9,6 @@
     ./firefox.nix
     ./x/dwm/default.nix
     ./nvim/default.nix
-    ./x/slstatus/default.nix
+    #./x/slstatus/default.nix
   ];
 }
