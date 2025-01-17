@@ -6,7 +6,6 @@
         enable = true;
         providers = [
           "friendly-snippets"
-          "vimPlugins.vim-snippets"
           "crates-nvim"
           "lspkind"
           "lspsaga"

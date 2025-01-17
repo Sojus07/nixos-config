@@ -21,6 +21,7 @@
       ".wp/manga.png".source = ./raw/wp/manga.png;
       ".wp/bg.png".source = ./raw/wp/bg.png;
       ".wp/wolf.png".source = ./raw/wp/wolf.png;
+      ".wp/nixos_dark.png".source = ./raw/wp/nixos_dark.png;
     };
   };
 }
