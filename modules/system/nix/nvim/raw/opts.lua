@@ -16,7 +16,7 @@ vim.diagnostic.config({
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = " "
+vim.g.mapleader = "\\"
 map('n', '<c-t>', ":ToggleTerm size=15<CR>", opts)
 map('n', '<c-n>', ":Neotree filesystem reveal toggle<CR>", opts)
 map('v', '<Tab>', '>gv', opts)

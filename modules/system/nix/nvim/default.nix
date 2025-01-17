@@ -9,11 +9,17 @@
     ./neotree.nix
     ./cmp.nix
     ./lualine.nix
+    ./snip.nix
   ];
   programs.nvf = {
     enable = true;
     settings = {
       vim = {
+        ui = {
+          noice = {
+            enable = true;
+          };
+        };
         extraLuaFiles = [
           (builtins.path {
             path = ./raw/opts.lua;

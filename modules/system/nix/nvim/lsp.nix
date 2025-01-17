@@ -66,6 +66,9 @@
         lsp.enable = true;
         treesitter.enable = true;
       };
+      trouble = {
+        enable = true;
+      };
     };
   };
 }
