@@ -4,15 +4,16 @@
     snippets = {
       luasnip = {
         enable = true;
-        providers = [
-          "friendly-snippets"
-          "crates-nvim"
-          "lspkind"
-          "lspsaga"
-          "rustaceanvim"
-        ];
+        loaders = "require('luasnip.loaders.from_snipmate').lazy_load()";
+        #providers = [
+        #  "friendly-snippets"
+        #  "crates-nvim"
+        #  "lspkind"
+        #  "lspsaga"
+        #  "rustaceanvim"
+        #];
         setupOpts = {
-          enable_autosnippets = true;
+          enable_autosnippets = false;
         };
       };
     };

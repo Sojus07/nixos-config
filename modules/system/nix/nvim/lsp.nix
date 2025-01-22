@@ -13,12 +13,16 @@
       };
       python = {
         enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
       };
       go = {
         enable = true;
+        lsp.enable = true;
+        treesitter.enable = true;
       };
       lua = {
-        enable = true;
+        enable = true; 
       };
       rust = {
         enable = true;

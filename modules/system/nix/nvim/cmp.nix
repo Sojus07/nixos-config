@@ -18,12 +18,11 @@
             completeopt = "menu,menuone,noinsert,noselect";
           };
         };
-        sourcePlugins = [
-          "crates-nvim"
-          "cmp-path"
-          "cmp-nvim-lsp"
-          "rustaceanvim"
-        ];
+        #sourcePlugins = [
+        #  "crates-nvim"
+        #  "cmp-nvim-lsp"
+        #  "rustaceanvim"
+        #];
       };
     };
   };

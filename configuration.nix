@@ -173,6 +173,7 @@
     htop
     btop
     kew
+    jq
 
     # dev
     rustup
