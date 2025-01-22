@@ -178,6 +178,7 @@
     # dev
     rustup
     python3
+    python312Packages.pip
     nodejs
     gccgo14
     go
@@ -237,7 +238,7 @@
     vesktop
     pacman
     wf-recorder
-
+    qbittorrent
   ];
 
   security = {

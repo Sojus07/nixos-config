@@ -22,6 +22,7 @@
       ".wp/bg.png".source = ./raw/wp/bg.png;
       ".wp/wolf.png".source = ./raw/wp/wolf.png;
       ".wp/nixos_dark.png".source = ./raw/wp/nixos_dark.png;
+      ".wp/GABE_Windows.png".source = ./raw/wp/GABE_Windows.png;
     };
   };
 }
