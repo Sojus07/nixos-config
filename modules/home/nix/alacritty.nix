@@ -20,7 +20,7 @@
       colors = {
         primary = {
           foreground = "#FFFFFF";
-          background = "#262626";
+          background = "#121212";
         };
       };
     };

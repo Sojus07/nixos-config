@@ -31,6 +31,8 @@
         telescope.enable = true;
         theme = {
           enable = true;
+          name = "oxocarbon";
+          style = "dark";
         };
       };
     };

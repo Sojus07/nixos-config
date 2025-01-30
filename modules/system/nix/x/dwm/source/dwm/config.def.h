@@ -13,16 +13,23 @@ static const int topbar = 1;  /* 0 means bottom bar */
 static const char *fonts[] = {"Fantasque Sans Mono:size=10"};
 static const char dmenufont[] = "Fantasque Sans Mono:size=10";
 
-static const char col_gray1[] = "#262626";
+//static const char col_gray1[] = "#262626";
+//static const char col_gray2[] = "#ffffff";
+//static const char col_gray3[] = "#dde1e6";
+//static const char col_gray4[] = "#ffffff";
+//static const char col_cyan[] = "#262626";
+
+static const char col_gray1[] = "#121212";
 static const char col_gray2[] = "#ffffff";
 static const char col_gray3[] = "#dde1e6";
 static const char col_gray4[] = "#ffffff";
-static const char col_cyan[] = "#262626";
+static const char col_cyan[]  = "#121212";
+
 
 static const char *colors[][3] = {
     /*               fg         bg         border   */
-    [SchemeNorm] = {col_gray3, col_gray1, col_gray1}, /* Normale Fenster */
-    [SchemeSel] = {col_gray4, col_cyan, col_gray2}, /* Ausgewähltes Fenster */
+    [SchemeNorm] = {col_gray3, col_gray1, col_gray1}, 
+    [SchemeSel] = {col_gray4, col_cyan, col_gray2}, 
 };
 
 /* tagging */

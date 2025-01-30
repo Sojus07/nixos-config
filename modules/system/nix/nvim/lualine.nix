@@ -4,6 +4,7 @@
     statusline = {
       lualine = {
         enable = true;
+        theme = "oxocarbon"; 
         globalStatus = true;
         icons.enable = true;
         ignoreFocus = [
