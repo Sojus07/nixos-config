@@ -10,10 +10,6 @@
     curl
     dosfstools
     ntfs3g
-    waybar
-    xdg-desktop-portal-hyprland
-    grim
-    slurp
     feh
     gnumake
     flameshot

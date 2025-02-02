@@ -31,20 +31,7 @@
       };
     };
   };
-  boot = {
-    loader = {
-      systemd-boot = {
-        enable = true;
-      };
-      grub = {
-        enable = false;
-        device = "/dev/sda";
-        useOSProber = true;
-      };
-    };
-    supportedFilesystems = [ "ntfs" ];
-  };
-
+  
   time.timeZone = "Europe/Berlin";
   console = {
     font = "Lat2-Terminus16";
