@@ -104,6 +104,7 @@
   fonts = {
     fontconfig.enable = true;
     packages = with pkgs; [
+      terminus-nerdfont
       noto-fonts
       noto-fonts-emoji
       liberation_ttf
