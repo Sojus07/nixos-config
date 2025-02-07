@@ -3,8 +3,8 @@
   programs = {
     git = {
       enable = true;
-      userName = "fqbn207";
-      userEmail = "fqbn207";
+      userName = "Sojus07";
+      userEmail = "Sojus07";
     };
   };
 }

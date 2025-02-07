@@ -19,7 +19,8 @@
         gc = "git commit";
         ga = "git add -A";
         http = "python3 -m http.server";
-        ls = "${pkgs.eza}/bin/eza -la --icons";
+        ls = "${pkgs.eza}/bin/eza -l --icons";
+        tree = "${pkgs.eza}/bin/eza --tree --icons";
         cp = "cp -rv";
         mv = "mv -v";
         mkdir = "mkdir -pv";
@@ -29,10 +30,6 @@
         {
           name = "z";
           src = pkgs.fishPlugins.z.src;
-        }
-        {
-          name = "sponge";
-          src = pkgs.fishPlugins.sponge.src;
         }
         {
           name = "pisces";

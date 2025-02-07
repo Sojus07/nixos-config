@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    # sys
+    # System utilities
     unzip
     yt-dlp
     inetutils
@@ -10,18 +10,18 @@
     curl
     dosfstools
     ntfs3g
+    usbutils
+    alsa-utils
+    pavucontrol
+    flameshot
     feh
     gnumake
-    flameshot
     tree
     gdb
     vscode
-    pavucontrol
-    usbutils
-    alsa-utils
     neovide
 
-    # cli
+    # Command-line utilities
     neofetch
     fastfetch
     onefetch
@@ -32,10 +32,9 @@
     fzf
     htop
     btop
-    kew
     jq
 
-    # dev
+    # Development & compilers
     rustup
     python3
     python312Packages.pip
@@ -44,18 +43,20 @@
     go
     dotnet-sdk
     bear
+
+    # Android development
     android-tools
     android-udev-rules
     android-studio-tools
-    
+
+    # Windows compatibility
     wine
     winetricks
 
-    # embedded
+    # Embedded & hardware development
     espup
     esphome
     esptool
-    ethtool
     espflash
     minicom
     pulseview
@@ -67,21 +68,21 @@
     chirp
     picocom
     pwndbg
-    gdb
     minipro
+    ethtool
 
-    # LSPs
+    # Language servers (LSPs)
     nixd
     arduino-language-server
 
-    # libs
+    # Libraries
     python312Packages.pyserial
     python312Packages.meshtastic
 
-    # virt
+    # Virtualization
     qemu
 
-    # SDR
+    # Software Defined Radio (SDR)
     noaa-apt
     wsjtx
     qsstv
@@ -93,7 +94,7 @@
     gqrx
     multimon-ng
 
-    # misc
+    # Miscellaneous
     cava
     vesktop
     pacman
