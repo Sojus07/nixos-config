@@ -7,7 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./modules/system/nix/default.nix
+    ./modules/default.nix
   ];
 
   nixpkgs = {
@@ -58,7 +58,7 @@
 
   environment.etc = {
     "makepkg.conf".source = "${pkgs.pacman}/etc/makepkg.conf";
-    "pacman.conf".source = ./modules/system/raw/pacman.conf;
+    "pacman.conf".source = ../default/raw/pacman.conf;
   };
 
   system.stateVersion = "unstable";

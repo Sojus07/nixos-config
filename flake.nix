@@ -1,5 +1,5 @@
 {
-  description = "fqbn207 shitty NixOS Configuration lol";
+  description = "Sojus07 shitty NixOS Configuration lol";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -17,7 +17,7 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/default/configuration.nix
+        ./hosts/computer/configuration.nix
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
         {
