@@ -5,7 +5,7 @@
     xwayland = true;
     package = pkgs.swayfx-unwrapped;
     wrapperFeatures.gtk = true;
-
+    checkConfig = false;
     extraSessionCommands = ''
       export _JAVA_AWT_WM_NONREPARENTING=1
       export QT_QPA_PLATFORM=wayland
@@ -14,10 +14,10 @@
 
     config = rec {
       modifier = "Mod4";
-      terminal = "wezterm";
-      menu = "${pkgs.rofi}/bin/rofi -show drun -c .config/rofi/config.rasi";
+      terminal = "alacritty";
+      menu = "${pkgs.rofi}/bin/rofi -show run -c .config/rofi/config.rasi";
       startup = [
-        {command = "swaybg -i $HOME/.wp/skull_purple.png";}
+        {command = "swaybg -i $HOME/.wp/soyuz.png";}
       ];
       bars = [{ command = "waybar"; }];      
       gaps = {
