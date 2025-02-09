@@ -14,7 +14,7 @@
     home-manager,
     nvf,
   }: {
-    nixosConfigurations.poggers = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
@@ -24,7 +24,23 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.fabian = import ./modules/home/home.nix;
+            users.fabian = import ./hosts/default/modules/home/home.nix;
+          };
+        }
+      ];
+    };
+    
+    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/laptop/configuration.nix
+        nvf.nixosModules.default
+        home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.fabian = import ./hosts/laptop/modules/home/home.nix;
           };
         }
       ];
