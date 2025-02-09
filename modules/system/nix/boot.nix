@@ -4,11 +4,12 @@
     loader = {
       systemd-boot = {
         enable = true;
-      };
-      grub = {
-        enable = false;
-        device = "/dev/sda";
-        useOSProber = true;
+        extraEntries = {
+          "mint.conf" = ''
+            title Linux Mint
+            efi /EFI/ubuntu/shimx64.efi
+          '';
+        };
       };
     };
     supportedFilesystems = [ "ntfs" ];

@@ -44,7 +44,7 @@
 
         run-shell ${pkgs.tmuxPlugins.net-speed}/share/tmux-plugins/net-speed/net_speed.tmux 
         run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
-        #run-shell ${pkgs.tmuxPlugins.battery}/share/tmux-plugins/battery/battery.tmux
+        run-shell ${pkgs.tmuxPlugins.battery}/share/tmux-plugins/battery/battery.tmux
 
         set -g status-position top
         #set-option -g status-style bg=default
