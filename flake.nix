@@ -17,7 +17,7 @@
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./configuration.nix
+        ./hosts/default/configuration.nix
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
         {
