@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 {
   security = {
+    rtkit = {
+      enable = true;
+    };
+    polkit = {
+      enable = true;
+    };
     doas = {
       enable = true;
       extraRules = [
@@ -12,4 +18,8 @@
       ];
     };
   };
+  environment.systemPackages = with pkgs; [
+    polkit
+    polkit_gnome
+  ];
 }

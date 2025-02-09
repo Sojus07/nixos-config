@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./sway/default.nix
+    ../../../../default/windowManager/sway/default.nix
     ./alacritty.nix
     ./shell.nix
     ./git.nix

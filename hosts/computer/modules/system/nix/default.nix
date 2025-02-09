@@ -4,7 +4,8 @@
   ...
 }: {
   imports = [
-    ./x/dwm/default.nix
+    ../../../../default/windowManager/dwm/default.nix
+    ../../../../default/editors/nvim/default.nix
     ./nvim/default.nix
     ./networking.nix
     ./users.nix

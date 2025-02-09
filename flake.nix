@@ -24,7 +24,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.fabian = import ./hosts/default/modules/home/home.nix;
+            users.fabian = import ./hosts/computer/modules/home/home.nix;
           };
         }
       ];

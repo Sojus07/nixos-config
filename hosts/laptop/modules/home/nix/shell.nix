@@ -24,28 +24,13 @@
         cp = "cp -rv";
         mv = "mv -v";
         mkdir = "mkdir -pv";
-        update = "sudo nixos-rebuild switch --flake /etc/nixos#poggers --impure";
+        update-default = "sudo nixos-rebuild switch --flake /etc/nixos#default --impure";
+        update-laptop = "sudo nixos-rebuild switch --flake /etc/nixos#laptop --impure";
       };
       plugins = [
         {
-          name = "z";
-          src = pkgs.fishPlugins.z.src;
-        }
-        {
-          name = "pisces";
-          src = pkgs.fishPlugins.pisces.src;
-        }
-        {
           name = "fzf-fish";
           src = pkgs.fishPlugins.fzf-fish.src;
-        }
-        {
-          name = "hydro";
-          src = pkgs.fishPlugins.hydro.src;
-        }
-        {
-          name = "grc";
-          src = pkgs.fishPlugins.grc.src;
         }
         {
           name = "git-abbr";
@@ -58,10 +43,6 @@
         {
           name = "colored-man-pages";
           src = pkgs.fishPlugins.colored-man-pages.src;
-        }
-        {
-          name = "bobthefisher";
-          src = pkgs.fishPlugins.bobthefisher.src;
         }
       ];
     };

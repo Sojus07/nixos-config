@@ -4,17 +4,17 @@
   ...
 }: {
   imports = [
-    ./x/dwm/default.nix
-    ./nvim/default.nix
+    ../../../../default/windowManager/dwm/default.nix
+    ../../../../default/editors/nvim/default.nix
     ./networking.nix
     ./users.nix
     ./services.nix
-    ./gaming.nix
     ./firefox.nix
     ./pkgs.nix
     ./sec.nix
     ./virt.nix
     ./boot.nix
     ./hw.nix  
+    ./fingerprint.nix
   ];
 }
