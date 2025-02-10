@@ -14,7 +14,7 @@
     home-manager,
     nvf,
   }: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.computer = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/computer/configuration.nix

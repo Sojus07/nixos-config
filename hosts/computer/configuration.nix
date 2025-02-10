@@ -8,6 +8,7 @@
   imports = [
     ./hardware-configuration.nix
     ./modules/default.nix
+    ../default/default.nix
   ];
 
   nixpkgs = {

@@ -4,8 +4,6 @@
   ...
 }: {
   imports = [
-    
-    ./nvim/default.nix
     ./networking.nix
     ./users.nix
     ./services.nix
