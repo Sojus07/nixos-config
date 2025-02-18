@@ -99,6 +99,7 @@
     pacman
     wf-recorder
     qbittorrent
+    superTuxKart    
   ];
   
   fonts = {
