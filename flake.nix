@@ -14,10 +14,10 @@
     home-manager,
     nvf,
   }: {
-    nixosConfigurations.computer = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.sputnik = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/computer/configuration.nix
+        ./hosts/sputnik/configuration.nix
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
         {
@@ -30,10 +30,10 @@
       ];
     };
     
-    nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.meteor = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/laptop/configuration.nix
+        ./hosts/meteor/configuration.nix
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
         {
