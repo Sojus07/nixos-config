@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 {
   networking = {
-    hostName = "poggers";
     networkmanager.enable = true;
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [
         80
         1337

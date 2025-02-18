@@ -5,6 +5,8 @@
   ...
 }:
 {
+  networking.hostName = "sputnik";
+
   imports = [
     ./hardware-configuration.nix
     ./modules/default.nix
