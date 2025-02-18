@@ -9,7 +9,6 @@
 
   imports = [
     ./hardware-configuration.nix
-    ./modules/default.nix
     ../default/default.nix
   ];
 
@@ -58,6 +57,6 @@
     "pacman.conf".source = ../default/raw/pacman.conf;
   };
 
-  system.stateVersion = "unstable";
+  system.stateVersion = "25.05";
 
 }

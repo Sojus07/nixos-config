@@ -67,7 +67,6 @@
     binwalk
     chirp
     picocom
-    pwndbg
     minipro
     ethtool
 
@@ -105,7 +104,6 @@
   fonts = {
     fontconfig.enable = true;
     packages = with pkgs; [
-      terminus-nerdfont
       noto-fonts
       noto-fonts-emoji
       liberation_ttf
@@ -115,8 +113,9 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
-      pkgs.nerd-fonts._0xproto
-      pkgs.nerd-fonts.droid-sans-mono
+      nerd-fonts._0xproto
+      nerd-fonts.droid-sans-mono
+      nerd-fonts.terminess-ttf
     ];
   };
 

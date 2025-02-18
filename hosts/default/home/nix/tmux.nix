@@ -21,7 +21,7 @@
         bind t new-window
         bind -n M-w previous-window
         bind -n M-e next-window
-        bind r source-file ~/.tmux.conf
+        bind r source-file ~/.config/tmux/tmux.conf
         bind -n M-Left select-pane -L
         bind -n M-Right select-pane -R
         bind -n M-Up select-pane -U

@@ -72,6 +72,7 @@
       };
     };
     lsp = {
+      lspkind.enable = true;    
       trouble = {
         enable = true;
       };
