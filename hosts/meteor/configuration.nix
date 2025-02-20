@@ -60,7 +60,23 @@
 
   environment.etc = {
     "makepkg.conf".source = "${pkgs.pacman}/etc/makepkg.conf";
-    "pacman.conf".source = ../default/raw/pacman.conf;
+    "pacman.conf".text = ''
+      [options]
+      HoldPkg     = pacman glibc
+      UseSyslog
+      Color
+      ILoveCandy
+      CheckSpace
+      VerbosePkgLists
+      ParallelDownloads = 5
+      SigLevel    = Never
+
+      [dkp-libs]
+      Server = https://pkg.devkitpro.org/packages
+
+      [dkp-linux]
+      Server = https://pkg.devkitpro.org/packages/linux/x86_64/
+    '';
   };
 
   system.stateVersion = "25.05";
