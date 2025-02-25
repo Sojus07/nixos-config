@@ -68,7 +68,6 @@
 
         run-shell ~/.tmux/plugins/tmux-nova/nova.tmux
         run '~/.tmux/plugins/tpm/tpm'
-                
 
       '';
     };

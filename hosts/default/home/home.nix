@@ -24,8 +24,9 @@
       ".wp/wolf.png".source = ./raw/wp/wolf.png;
       ".wp/nixos_dark.png".source = ./raw/wp/nixos_dark.png;
       ".wp/GABE_Windows.png".source = ./raw/wp/GABE_Windows.png;
-      ".wp/skulls.png".source = ./raw/wp/skulls.png;
       ".wp/soyuz.png".source = ./raw/wp/soyuz.png;
+      ".wp/bridge.png".source = ./raw/wp/bridge.png;
+      ".wp/skulls.png".source = ./raw/wp/skulls.png;
     };
   };
 }
