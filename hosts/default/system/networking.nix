@@ -1,9 +1,19 @@
 { config, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    iperf3
+    speedtest-cli
+  ];
+
+  services = {
+    iperf3 = {
+      enable = true;
+    };
+  };
   networking = {
     networkmanager.enable = true;
     firewall = {
-      enable = true;
+      enable = false;
       allowedTCPPorts = [
         80
         1337
