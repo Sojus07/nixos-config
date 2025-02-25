@@ -28,7 +28,7 @@
       ".wp/bridge.png".source = ./raw/wp/bridge.png;
       ".wp/skulls.png".source = ./raw/wp/skulls.png;
       ".wp/purple_plants.png".source = ./raw/wp/purple_plants.png;
-      ".wp/black_hole.png".source = "./raw/wp/black_hole.png";
+      ".wp/black_hole.png".source = ./raw/wp/black_hole.png;
     };
   };
 }
