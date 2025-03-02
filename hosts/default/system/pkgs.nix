@@ -33,6 +33,7 @@
     htop
     btop
     jq
+    ffmpeg
 
     # Development & compilers
     rustup
