@@ -14,14 +14,12 @@
           type "pipewire"
           name "Pipewire Output"
         }
-
         audio_output {
           type            "fifo"
           name            "Visualizer feed"
           path            "/tmp/mpd.fifo"
           format          "44100:16:2"
         }
-
       '';
     };
   };
@@ -37,40 +35,52 @@
         mouse_support = "yes";
         visualizer_data_source = "/tmp/mpd.fifo";
         visualizer_output_name = "my_fifo";
-        visualizer_in_stereo = "yes";
-        visualizer_type = "wave";
+        visualizer_in_stereo = "no";
+        visualizer_type = "spectrum";
         visualizer_look = "█┇";
         visualizer_color = "7, 5, 4, 3";
-        startup_screen = "playlist";
+        startup_screen = "browser";
         startup_slave_screen = "visualizer";
-        song_list_format = "[%l] - [ %a | %t] ";
-        locked_screen_width_part = 50;
-        ask_for_locked_screen_width_part = "no";
+        playlist_disable_highlight_delay = "1";
+        song_list_format = "{$2%a$9} $1|$9 {$5%t$9} $R {$6%b$9} $1|$9 {$2%l$9}";
+        song_library_format = "{%n - }{%t}|{%f}";
+        song_status_format = "$b{$6%a$9 $1|$9} {$7%t$9} $1|$9 {$2%b$9} $1|$9 {$6%y$9} $1|$9";
+        song_window_title_format = "{%a-%t}";
+        song_columns_list_format = "(6)[magenta]{l} (30)[red]{a} (30)[blue]{b} (53)[magenta]{t}";
         playlist_display_mode = "classic";
-        autocenter_mode = "yes";
-        progressbar_look = "___";
-        header_visibility = "no";
-        statusbar_visibility = "no";
         titles_visibility = "no";
-        follow_now_playing_lyrics = "no";
-        enable_window_title = "no";
-        external_editor = "vis";
+        browser_display_mode = "columns";
+        incremental_seeking = "yes";
+        autocenter_mode = "yes";
+        header_visibility = "no";
+        statusbar_visibility = "yes";
+        cyclic_scrolling = "yes";
+        display_bitrate = "yes";
+        ignore_leading_the = "yes";
+        enable_window_title = "yes";
+        progressbar_look = ":: ";
+        user_interface = "alternative";
+        alternative_header_first_line_format = "{$b$2%a$9} $1|$9 {$5%t$9}";
+        alternative_header_second_line_format = "{$6%b$9} $1|$9 {$2(%y)$9}";
+        alternative_ui_separator_color = "black";
+        playlist_separate_albums = "no";
         colors_enabled = "yes";
-        empty_tag_color = "red";
-        header_window_color = "yellow";
-        volume_color = "yellow";
-        state_line_color = "red";
-        state_flags_color = "yellow";
-        main_window_color = "default";
-        color1 = "red";
-        color2 = "red";
-        progressbar_color = "5";
-        progressbar_elapsed_color = "4";
+        empty_tag_color = "blue";
+        header_window_color = "black";
+        volume_color = "black";
+        display_volume_level = "yes";
+        state_line_color = "cyan";
+        state_flags_color = "red";
+        main_window_color = "blue";
+        color1 = "white";
+        color2 = "blue";
+        progressbar_color = "black";
         statusbar_color = "black";
-        alternative_ui_separator_color = "magenta";
-        window_border_color = "yellow";
-        active_window_border = "magenta";
+        window_border_color = "red";
+        active_window_border = "red";
       };
     };
+
+
   };
 }
