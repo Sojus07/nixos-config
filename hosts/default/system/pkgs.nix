@@ -20,6 +20,7 @@
     gdb
     vscode
     neovide
+    chromium
 
     # Command-line utilities
     neofetch

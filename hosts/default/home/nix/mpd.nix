@@ -42,6 +42,7 @@
         startup_screen = "browser";
         startup_slave_screen = "visualizer";
         playlist_disable_highlight_delay = "1";
+        now_playing_prefix = "$8$b ➤   ";
         song_list_format = "{$2%a$9} $1|$9 {$5%t$9} $R {$6%b$9} $1|$9 {$2%l$9}";
         song_library_format = "{%n - }{%t}|{%f}";
         song_status_format = "$b{$6%a$9 $1|$9} {$7%t$9} $1|$9 {$2%b$9} $1|$9 {$6%y$9} $1|$9";
@@ -80,7 +81,5 @@
         active_window_border = "red";
       };
     };
-
-
   };
 }
