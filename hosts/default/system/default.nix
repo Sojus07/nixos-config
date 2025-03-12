@@ -15,5 +15,6 @@
     ./boot.nix
     ./hw.nix  
     ./radio.nix
+    ./chromium.nix
   ];
 }
