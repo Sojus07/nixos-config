@@ -3,7 +3,12 @@
   programs.chromium = {
     enable = true;
     extensions = [
-      "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh" # Dark Reader
     ];
+    extraOpts = {
+      "BrowserSignin" = 0;
+      "SyncDisabled" = true;
+      "PasswordManagerEnabled" = false;
+    };
   };
 }
