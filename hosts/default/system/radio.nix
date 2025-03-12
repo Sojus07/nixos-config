@@ -1,10 +1,10 @@
 { config, pkgs, ... }:
 {
   hardware = {
-    bluetooth = {
+    rtl-sdr = {
       enable = true;
     };
-    graphics = {
+    hackrf = {
       enable = true;
     };
   };

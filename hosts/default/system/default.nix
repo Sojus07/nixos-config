@@ -14,5 +14,6 @@
     ./virt.nix
     ./boot.nix
     ./hw.nix  
+    ./radio.nix
   ];
 }
