@@ -50,6 +50,9 @@
   programs = {
     nix-ld.enable = true;
     fish.enable = true;
+    dconf = {
+      enable = true;
+    };
   };
 
   environment.etc = {

@@ -101,7 +101,9 @@
     wf-recorder
     qbittorrent
     superTuxKart    
+    adwaita-icon-theme
   ];
+
   
   fonts = {
     fontconfig.enable = true;
