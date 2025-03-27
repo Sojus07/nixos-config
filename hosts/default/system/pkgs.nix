@@ -3,7 +3,6 @@
   environment.systemPackages = with pkgs; [
     # System utilities
     unzip
-    yt-dlp
     inetutils
     git
     wget
