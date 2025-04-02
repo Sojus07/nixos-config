@@ -92,6 +92,7 @@
     cubicsdr
     gqrx
     multimon-ng
+    stellarium
 
     # Miscellaneous
     cava
