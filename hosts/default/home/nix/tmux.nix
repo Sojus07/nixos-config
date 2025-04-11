@@ -27,7 +27,6 @@
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
 
-        set-option -s status-interval 1
         set -g status-left-length 100
         set -g status-right-length 100
         set -g status-position top
@@ -37,8 +36,6 @@
         set -g @plugin 'o0th/tmux-nova'
 
         set -g @nova-nerdfonts true
-        set -g @nova-nerdfonts-left 
-        set -g @nova-nerdfonts-right 
 
         set -g @nova-pane-active-border-style "#44475a"
         set -g @nova-pane-border-style "#282a36"
