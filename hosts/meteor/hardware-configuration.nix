@@ -24,11 +24,6 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
   
-  fileSystems."/media/STUFF" = 
-    { device = "/dev/disk/by-label/STUFF";
-      fsType = "ext4";
-    };
-  
   swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;

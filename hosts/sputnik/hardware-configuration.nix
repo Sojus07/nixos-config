@@ -19,7 +19,7 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/9AA3-DC16";
+    { device = "/dev/disk/by-label/ESP";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };

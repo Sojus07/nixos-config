@@ -5,7 +5,6 @@
 }: {
   imports = [
     ./nix
-    ./../windowManager/sway/default.nix
   ];
   home = {
     enableNixpkgsReleaseCheck = false;

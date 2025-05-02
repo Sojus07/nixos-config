@@ -55,7 +55,6 @@
 
   programs = {
     nix-ld.enable = true;
-    fish.enable = true;
   };
 
   environment.etc = {

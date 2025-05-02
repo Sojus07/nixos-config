@@ -11,6 +11,21 @@
     ./hardware-configuration.nix
     ../default/default.nix
   ];
+  
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+    };
+    supportedFilesystems = [ "ntfs" ];
+  };
+  
+  programs = {
+    steam = {
+      enable = true;
+    };
+  };
 
   nixpkgs = {
     config = {
@@ -49,7 +64,6 @@
 
   programs = {
     nix-ld.enable = true;
-    fish.enable = true;
     dconf = {
       enable = true;
     };
