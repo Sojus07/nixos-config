@@ -151,7 +151,6 @@ static const Key keys[] = {
     {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
     {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
     {0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol}},
-
 };
 
 static const Button buttons[] = {

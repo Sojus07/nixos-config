@@ -73,7 +73,7 @@
     "makepkg.conf".source = "${pkgs.pacman}/etc/makepkg.conf";
     "pacman.conf".text = ''
       [options]
-      HoldPkg     = pacman glibc
+      HoldPkg = pacman glibc
       UseSyslog
       Color
       ILoveCandy
