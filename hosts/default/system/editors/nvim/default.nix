@@ -10,7 +10,7 @@
     ./cmp.nix
     ./lualine.nix
     ./snip.nix
-    ./extraPlugins.nix
+                #./extraPlugins.nix
   ];
   programs.nvf = {
     enable = true;
