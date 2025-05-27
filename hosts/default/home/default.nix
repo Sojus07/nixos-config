@@ -5,5 +5,6 @@
     ./git.nix
     ./tmux.nix
     ./sway.nix
+    ./waybar.nix
   ];
 }

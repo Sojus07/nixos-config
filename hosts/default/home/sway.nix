@@ -5,7 +5,7 @@
     xwayland = true;
     package = pkgs.swayfx-unwrapped;
     wrapperFeatures.gtk = true;
-     
+    checkConfig = false;     
 
     extraSessionCommands = ''
       export _JAVA_AWT_WM_NONREPARENTING=1
@@ -15,12 +15,12 @@
 
     config = rec {
       modifier = "Mod4";
-      terminal = "wezterm";
+      terminal = "alacritty";
       menu = "${pkgs.rofi}/bin/rofi -show drun -c .config/rofi/config.rasi";
       startup = [
-        {command = "swaybg -i $HOME/.wp/skull_purple.png";}
+        {command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/gruvbox-dark-blue.png";}
       ];
-      bars = [{ command = "waybar"; }];      
+      bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];      
       gaps = {
 	      outer = 5;
 	      inner = 10;
@@ -31,10 +31,7 @@
       keybindings = {
         # IMPORTANT STUFF #
         "${modifier}+Return" = "exec ${terminal}";
-        "${modifier}+F" = "exec firefox";
         "${modifier}+space" = "exec ${menu}";
-        "${modifier}+D" = "exec discord";
-        "${modifier}+C" = "exec code";
         "${modifier}+Q" = "kill";
         "${modifier}+Shift+R" = "reload";
         "${modifier}+Shift+S" = "grim -g '$(slurp)'";
@@ -79,16 +76,16 @@
   	    "${modifier}+Shift+9" = "move container to workspace number 9";
 	
 	      # Audio
-        "XF86AudioRaiseVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ +10%";
-        "XF86AudioLowerVolume" = "exec pactl set-sink-volume @DEFAULT_SINK@ -10%";
-        "XF86AudioMute" = "exec set-volume toggle-mute";
+        "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
+        "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-volume toggle-mute";
         "XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
         "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";
         "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
 
-        "XF86MonBrightnessDown" = "exec brightnessctl set 15%-";
-        "XF86MonBrightnessUp" =  "exec brightnessctl set +15%";
+        "XF86MonBrightnessDown" = "exec ${pkgs.brightnessctl}/bin/brightnessctl set 5%-";
+        "XF86MonBrightnessUp" =  "exec ${pkgs.brightnessctl}/bin/brightnessctl set +5%";
 		
       };
     };

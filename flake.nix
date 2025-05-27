@@ -14,7 +14,7 @@
     home-manager,
     nvf,
   }: {
-    nixosConfigurations.sputnik = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.iridium = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./hosts/iridium/configuration.nix

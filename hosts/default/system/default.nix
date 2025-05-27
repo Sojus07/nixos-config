@@ -10,7 +10,5 @@
     ./services.nix
     ./firefox.nix
     ./pkgs.nix
-    ./radio.nix
-    ./chromium.nix
   ];
 }
