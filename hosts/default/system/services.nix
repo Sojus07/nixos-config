@@ -9,12 +9,12 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+    dbus.enable = true;
     mullvad-vpn = {
       enable = true;
       package = pkgs.mullvad-vpn;
     };
-    sdrplayApi = {
-      enable = true;
-    };
+    gnome.gnome-keyring.enable = true;
   };
+  security.rtkit.enable = true;
 }

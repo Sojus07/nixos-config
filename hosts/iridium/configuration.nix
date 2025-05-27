@@ -5,7 +5,7 @@
   ...
 }:
 {
-  networking.hostName = "sputnik";
+  networking.hostName = "iridium";
 
   imports = [
     ./hardware-configuration.nix

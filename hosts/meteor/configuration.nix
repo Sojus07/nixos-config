@@ -11,6 +11,21 @@
     ./hardware-configuration.nix
     ../default/default.nix
   ];
+  
+  boot = {
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+    };
+    supportedFilesystems = [ "ntfs" ];
+  };
+  
+  programs = {
+    steam = {
+      enable = true;
+    };
+  };
 
   nixpkgs = {
     config = {
@@ -20,17 +35,11 @@
       ];
     };
   };
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 3d";
-    };
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-  };
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   systemd = {
     services = {
       modem-manager.enable = false;
@@ -55,13 +64,16 @@
 
   programs = {
     nix-ld.enable = true;
+    dconf = {
+      enable = true;
+    };
   };
 
   environment.etc = {
     "makepkg.conf".source = "${pkgs.pacman}/etc/makepkg.conf";
     "pacman.conf".text = ''
       [options]
-      HoldPkg     = pacman glibc
+      HoldPkg = pacman glibc
       UseSyslog
       Color
       ILoveCandy

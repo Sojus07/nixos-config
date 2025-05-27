@@ -4,5 +4,6 @@
     ./alacritty.nix
     ./git.nix
     ./tmux.nix
+    ./sway.nix
   ];
 }

@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./nix
+    ./default.nix
   ];
   home = {
     enableNixpkgsReleaseCheck = false;

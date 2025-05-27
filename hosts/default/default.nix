@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./system/windowManager/dwm/default.nix
     ./system/default.nix
   ];
   hardware = {
