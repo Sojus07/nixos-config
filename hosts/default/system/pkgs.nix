@@ -12,7 +12,7 @@
     usbutils
     alsa-utils
     pavucontrol
-    flameshot
+    (flameshot.override { enableWlrSupport = true; })
     feh
     gnumake
     tree
