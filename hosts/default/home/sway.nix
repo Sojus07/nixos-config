@@ -5,6 +5,12 @@
     swaybg
     slurp
     dunst
+    
+    xdg-desktop-portal
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
+    xdg-desktop-portal-gnome
+
   ];
   wayland.windowManager.sway = {
     enable = true;
@@ -40,7 +46,8 @@
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+Q" = "kill";
         "${modifier}+Shift+R" = "reload";
-        "${modifier}+Shift+S" = "grim -g '$(slurp)'";
+        "Print" = "flameshot gui";
+
         # WINDOW STUFF #
         "${modifier}+Shift+space" = "floating toggle";
         "${modifier}+Shift+F" = "fullscreen toggle";

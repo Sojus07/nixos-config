@@ -10,6 +10,7 @@
     ./services.nix
     ./firefox.nix
     ./pkgs.nix
+    ./rf.nix
   ];
 
   xdg = {

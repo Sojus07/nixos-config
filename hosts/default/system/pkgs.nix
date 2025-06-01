@@ -102,9 +102,9 @@
     qbittorrent
     superTuxKart    
     adwaita-icon-theme
-  ];
+    viewnior
+  ]; 
 
-  
   fonts = {
     fontconfig.enable = true;
     packages = with pkgs; [
