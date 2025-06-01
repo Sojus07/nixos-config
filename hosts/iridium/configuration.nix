@@ -55,13 +55,6 @@
     useXkbConfig = true;
   };
 
-  xdg.portal = {
-    enable = false;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
-
   programs = {
     nix-ld.enable = true;
     dconf = {

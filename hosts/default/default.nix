@@ -3,6 +3,7 @@
   imports = [
     ./system/default.nix
   ];
+
   hardware = {
     bluetooth = {
       enable = true;

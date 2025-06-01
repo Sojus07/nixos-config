@@ -1,5 +1,11 @@
 {config, pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    grim
+    swaybg
+    slurp
+    dunst
+  ];
   wayland.windowManager.sway = {
     enable = true;
     xwayland = true;
@@ -18,7 +24,7 @@
       terminal = "alacritty";
       menu = "${pkgs.rofi}/bin/rofi -show drun -c .config/rofi/config.rasi";
       startup = [
-        {command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/gruvbox-dark-blue.png";}
+        {command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/gruvbox-dark-blue.png; ${pkgs.dunst}/bin/dunst";}
       ];
       bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];      
       gaps = {
@@ -75,10 +81,11 @@
         "${modifier}+Shift+8" = "move container to workspace number 8";
   	    "${modifier}+Shift+9" = "move container to workspace number 9";
 	
-	      # Audio
+	      # Media
         "XF86AudioRaiseVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%";
         "XF86AudioLowerVolume" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%";
-        "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-volume toggle-mute";
+        "XF86AudioMute" = "exec ${pkgs.pulseaudio}/bin/pactl set-sink-volume toggle-mute";
+        
         "XF86AudioStop" = "exec ${pkgs.playerctl}/bin/playerctl stop";
         "XF86AudioPrev" = "exec ${pkgs.playerctl}/bin/playerctl previous";
         "XF86AudioNext" = "exec ${pkgs.playerctl}/bin/playerctl next";

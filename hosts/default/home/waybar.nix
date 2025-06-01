@@ -29,7 +29,7 @@
       * {
 
         border: none;
-        font-family: JetBrainsMono Nerd Font, sans-serif;
+        font-family: Terminess Nerd Font, sans-serif;
         font-size: 14px;
       }
 
@@ -251,6 +251,7 @@
         };
 
         "clock" = {
+          interval = 1;
           tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
           format = " {:%H:%M:%S}";
           format-alt = " {:%A, %B %d, %Y}";
@@ -286,8 +287,9 @@
         };
 
         "network" = {
+          interval = 1;
           format-wifi = " {essid} {signalStrength}%";
-          format-ethernet = "{ifname}: {ipaddr}/{cidr} 󰈀 ";
+          format-ethernet = " {bandwidthUpBits} / {bandwidthDownBits}   | {ipaddr} 󰈀 ";
           format-linked = "{ifname} (No IP)  ";
           format-disconnected = "󰤮 Disconnected";
           on-click-release = "sleep 0";
@@ -295,6 +297,7 @@
         };
 
         "pulseaudio" = {
+          interval = 1;
           format = "{icon}{volume}% {format_source}";
           format-bluetooth = "{icon} {volume}%";
           format-bluetooth-muted = "   {volume}%";
@@ -308,8 +311,8 @@
             default = [" " " " "  "];
           };
           tooltip-format = "{desc} {volume}%";
-          on-click = "wpctl set-sink-mute @DEFAULT_SINK@ toggle";
-          on-click-right = "wpctl set-source-mute @DEFAULT_SOURCE@ toggle";
+          on-click = "${pkgs.wireplumber}/bin/wpctl set-sink-mute @DEFAULT_SINK@ toggle";
+          on-click-right = "${pkgs.wireplumber}/bin/pctl set-source-mute @DEFAULT_SOURCE@ toggle";
           on-click-middle = "${pkgs.pavucontrol}/bin/pavucontrol";
           on-click-release = "sleep 0";
           on-click-middle-release = "sleep 0";
