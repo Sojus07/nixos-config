@@ -19,6 +19,7 @@
     gdb
     vscode
     neovide
+    wireshark
 
     # Command-line utilities
     neofetch
