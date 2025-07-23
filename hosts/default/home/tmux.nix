@@ -7,9 +7,6 @@
       mouse = true;
       keyMode = "vi";
       extraConfig = ''
-        if "test ! -d ~/.tmux/plugins/tpm" \
-          "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
-
         unbind C-b
         set-option -g prefix C-a
         bind-key C-a send-prefix 
@@ -26,45 +23,25 @@
         bind -n M-Right select-pane -R
         bind -n M-Up select-pane -U
         bind -n M-Down select-pane -D
+        
 
-        set -g status-left-length 100
-        set -g status-right-length 100
+        set -g base-index 1
+        set -g renumber-windows on
+
+        set-window-option -g clock-mode-colour colour167
+        
+        set -g default-terminal "screen-256color"
+        set -g status-bg black
+        set -g status-fg white
         set -g status-position top
+        set -g status-left-length 64
+        set -g status-left "#[bg=black,fg=white,bold] [#S]"
+        set -g status-right-length 64
+        set -g status-right "#[bg=black,fg=white] #{pane_title} #[bg=black,fg=white,bold] | #[bg=black,fg=white,bold] %a %d %b | #[fg=white,bold]%H:%M "
 
-        ### NOVA ###
-
-        set -g @plugin 'o0th/tmux-nova'
-
-        set -g @nova-nerdfonts true
-
-        set -g @nova-pane-active-border-style "#44475a"
-        set -g @nova-pane-border-style "#282a36"
-        set -g @nova-status-style-bg "#121212"
-        set -g @nova-status-style-fg "#d8dee9"
-        set -g @nova-status-style-active-bg "#af87ff"
-        set -g @nova-status-style-active-fg "#121212"
-        set -g @nova-status-style-double-bg "#2d3540"
-
-        set -g @nova-pane "#I#{?pane_in_mode,  #{pane_mode},}  #W"
-
-        set -g @nova-segment-mode "#{?client_prefix,Ω,ω}"
-        set -g @nova-segment-mode-colors "#af87ff #121212"
-
-        set -g @nova-segment-whoami "#(whoami)@#h"
-        set -g @nova-segment-whoami-colors "#af87ff #121212"
-
-        set -g @nova-segment-date " %H:%M:%S"
-        set -g @nova-segment-date-colors "#87afff #121212"
-
-        set -g @nova-rows 0
-        set -g @nova-segments-0-left "mode"
-        set -g @nova-segments-0-right "date whoami "
-
-
-        ### END ###
-
-        run-shell ~/.tmux/plugins/tmux-nova/nova.tmux
-        run '~/.tmux/plugins/tpm/tpm'
+        set-window-option -g window-status-current-format "#[bg=white,fg=black,nobold,noitalics,nounderscore] #[bg=white,fg=black,bold] #I #[bg=white,fg=black,bold] #W#{?window_zoomed_flag,*Z,} #[bg=black,fg=white,nobold,noitalics,nounderscore]"
+        set-window-option -g window-status-format "#[bg=black,fg=white,noitalics] #[bg=black,fg=white] #I #[bg=black,fg=white] #W #[bg=black,fg=white,noitalics]"           
+      
 
       '';
     };

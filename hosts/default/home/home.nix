@@ -4,7 +4,9 @@
   ...
 }: {
   imports = [
-    ./default.nix
+    ./git.nix
+    ./tmux.nix
+    ./alacritty.nix
   ];
   home = {
     enableNixpkgsReleaseCheck = false;

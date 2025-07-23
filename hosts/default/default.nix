@@ -2,6 +2,7 @@
 {
   imports = [
     ./system/dwm/default.nix
+    ./system/editors/nvim/default.nix
     ./system/rf.nix
     ./system/pkgs.nix
     ./system/services.nix

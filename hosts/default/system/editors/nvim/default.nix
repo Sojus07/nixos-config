@@ -31,8 +31,25 @@
         telescope.enable = true;
         theme = {
           enable = true;
-          name = "oxocarbon";
-          style = "dark";
+          name = "base16";
+          base16-colors = {
+            base00 = "#000000";
+            base01 = "#101010";
+            base02 = "#202020";
+            base03 = "#303030";
+            base04 = "#404040";
+            base05 = "#ffffff";
+            base06 = "#ffffff";
+            base07 = "#ffffff";
+            base08 = "#ffffff";
+            base09 = "#ffffff";
+            base0A = "#ffffff";
+            base0B = "#ffffff";
+            base0C = "#ffffff";
+            base0D = "#ffffff";
+            base0E = "#ffffff";
+            base0F = "#ffffff";
+          }; 
         };
       };
     };
