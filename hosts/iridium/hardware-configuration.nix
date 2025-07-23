@@ -25,7 +25,7 @@
     };
   fileSystems."/media/STUFF" = 
     { device = "/dev/disk/by-label/STUFF";
-      fsType = "ext4";
+      fsType = "ntfs";
     };
 
   swapDevices = [ ];

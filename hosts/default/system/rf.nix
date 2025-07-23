@@ -1,12 +1,21 @@
 { config, pkgs, ... }:
 
 {
+  hardware = {
+    hackrf = {
+      enable = true;
+    };
+    rtl-sdr = {
+      enable = true;
+    };
+  };
+
   environment.systemPackages =
     let
-      satdump = with pkgs;
+      satdump = with pkgs; 
         stdenv.mkDerivation rec {
           pname = "satdump";
-          version = "1.2.0";
+          version = "1.2.2";
 
           src = fetchgit {
             url = "https://github.com/SatDump/SatDump.git";
@@ -43,5 +52,7 @@
           ];
         };
     in
-    [ satdump ];
+    [ 
+      satdump 
+    ];
 }

@@ -1,7 +1,12 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./system/default.nix
+    ./system/dwm/default.nix
+    ./system/rf.nix
+    ./system/pkgs.nix
+    ./system/services.nix
+    ./system/users.nix
+    ./system/firefox.nix
   ];
 
   hardware = {
@@ -16,5 +21,18 @@
     docker = {
       enable = true;
     };
+  };
+  environment.systemPackages = with pkgs; [
+    iperf3
+    speedtest-cli
+    dhcpcd
+  ];
+  services = {
+    iperf3 = {
+      enable = true;
+    };
+  };
+  networking = {
+    networkmanager.enable = true;
   };
 }

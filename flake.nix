@@ -29,21 +29,5 @@
         }
       ];
     };
-    
-    nixosConfigurations.meteor = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/meteor/configuration.nix
-        nvf.nixosModules.default
-        home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            useGlobalPkgs = true;
-            useUserPackages = true;
-            users.fabian = import ./hosts/default/home/home.nix;
-          };
-        }
-      ];
-    };
   };
 }

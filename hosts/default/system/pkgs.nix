@@ -12,7 +12,7 @@
     usbutils
     alsa-utils
     pavucontrol
-    (flameshot.override { enableWlrSupport = true; })
+    flameshot
     feh
     gnumake
     tree
@@ -87,21 +87,25 @@
     wsjtx
     qsstv
     gpredict
-    sdrangel
     sdrpp
-    gnuradio
     cubicsdr
     gqrx
     multimon-ng
-    stellarium
+    gnuradio 
+    gnuradioPackages.lora_sdr
+    gnuradioPackages.osmosdr
+    gnuradioPackages.bladeRF
+    osmo-hlr
+    osmo-bts
+    osmo-bsc
+    osmo-sgsn
+    osmo-ggsn
 
     # Miscellaneous
     cava
     vesktop
     pacman
-    wf-recorder
     qbittorrent
-    superTuxKart    
     adwaita-icon-theme
     viewnior
   ]; 
