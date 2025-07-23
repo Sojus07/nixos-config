@@ -17,8 +17,6 @@
     gnumake
     tree
     gdb
-    vscode
-    neovide
     wireshark
 
     # Command-line utilities
@@ -28,7 +26,6 @@
     vim
     weechat
     ranger
-    eza
     fzf
     htop
     btop
@@ -42,7 +39,6 @@
     nodejs
     gccgo14
     go
-    dotnet-sdk
     bear
 
     # Android development
@@ -55,15 +51,10 @@
     winetricks
 
     # Embedded & hardware development
-    espup
-    esphome
     esptool
     espflash
     minicom
-    pulseview
     cp210x-program
-    arduino-ide
-    arduino-cli
     flashrom
     binwalk
     chirp
@@ -82,32 +73,10 @@
     # Virtualization
     qemu
 
-    # Software Defined Radio (SDR)
-    noaa-apt
-    wsjtx
-    qsstv
-    gpredict
-    sdrpp
-    cubicsdr
-    gqrx
-    multimon-ng
-    gnuradio 
-    gnuradioPackages.lora_sdr
-    gnuradioPackages.osmosdr
-    gnuradioPackages.bladeRF
-    osmo-hlr
-    osmo-bts
-    osmo-bsc
-    osmo-sgsn
-    osmo-ggsn
-
     # Miscellaneous
     cava
     vesktop
-    pacman
     qbittorrent
-    adwaita-icon-theme
-    viewnior
   ]; 
 
   fonts = {
