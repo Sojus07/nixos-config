@@ -23,6 +23,7 @@
     neofetch
     fastfetch
     onefetch
+    cpufetch
     vim
     weechat
     ranger
@@ -31,6 +32,7 @@
     btop
     jq
     ffmpeg
+    gh-dash
 
     # Development & compilers
     rustup
