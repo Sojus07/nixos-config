@@ -1,10 +1,13 @@
 { config, pkgs, ... }:
 {
   imports = [
-    ./system/pkgs.nix
-    ./system/services.nix
-    ./system/users.nix
-    ./system/firefox.nix
+    ./pkgs.nix
+    ./services.nix
+    ./users.nix
+    ./firefox.nix
+    ./git.nix
+    ./tmux.nix
+    #./alacritty.nix
   ];
 
   hardware = {

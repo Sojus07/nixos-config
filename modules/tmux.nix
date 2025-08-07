@@ -3,8 +3,6 @@
   programs = {
     tmux = {
       enable = true;
-      disableConfirmationPrompt = true;
-      mouse = true;
       keyMode = "vi";
       extraConfig = ''
         unbind C-b
