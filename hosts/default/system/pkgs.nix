@@ -64,10 +64,6 @@
     minipro
     ethtool
 
-    # Language servers (LSPs)
-    nixd
-    arduino-language-server
-
     # Libraries
     python312Packages.pyserial
     python312Packages.meshtastic
