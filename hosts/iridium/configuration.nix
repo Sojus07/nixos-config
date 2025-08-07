@@ -9,7 +9,7 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../default/default.nix
+    ../../modules/default.nix
   ];
   
   boot = {
