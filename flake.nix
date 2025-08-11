@@ -53,5 +53,23 @@
         }
       ];
     };
+
+    nixosConfigurations.glonass = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/glonass/configuration.nix
+        home-manager.nixosModules.home-manager
+        #nix-sdr.nixosModules.default
+        dwm-nix.nixosModules.default
+        nvf-config.nixosModules.default
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.titus = import ./modules/home.nix;
+          };
+        }
+      ];
+    };
   };
 }
