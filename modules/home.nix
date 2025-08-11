@@ -1,10 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [
-    ./git.nix
-    ./tmux.nix
-    ./alacritty.nix
-  ];
   home = {
     enableNixpkgsReleaseCheck = false;
     stateVersion = "24.11";

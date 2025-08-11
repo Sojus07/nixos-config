@@ -7,7 +7,6 @@
     ./firefox.nix
     ./git.nix
     ./tmux.nix
-    #./alacritty.nix
   ];
 
   hardware = {

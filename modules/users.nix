@@ -5,7 +5,7 @@
       enable = true;
       extraRules = [
         {
-          users = [ "fabian" ];
+          users = [ "fabian" "titus" "root" ];
           noPass = true;
           keepEnv = true;
         }
@@ -23,8 +23,7 @@
       shellInit = ''
         case "$TERM" in
           xterm-color|*-256color) color_prompt=yes;;
-        esac
-      
+        esac 
         export DEVKITPRO="/opt/devkitpro"
         export DEVKITA64="$DEVKITPRO/devkitA64"
         export DEVKITARM="$DEVKITPRO/devkitARM"
@@ -34,6 +33,7 @@
       shellAliases = {
         update = "sudo nixos-rebuild switch --flake /etc/nixos --impure";
         http = "python3 -m http.server 1337";
+        ls = "ls -CF -larth";
       };
     };
   };
@@ -44,6 +44,22 @@
         useDefaultShell = true;
         isNormalUser = true;
         initialPassword = "1601";
+        extraGroups = [
+          "wheel"
+          "docker"
+          "audio"
+          "video"
+          "dialout"
+          "plugdev"
+          "adbusers"
+          "kvm"
+          "dialout"
+        ];
+      };
+      titus = {
+        useDefaultShell = true;
+        isNormalUser = true;
+        initialPassword = "2106";
         extraGroups = [
           "wheel"
           "docker"
