@@ -22,7 +22,9 @@
     dwm-nix,
     nvf-config,
     spicetify-nix
-  }@inputs: {
+  }@inputs: let 
+    USER = "fabian";
+  in {
     nixosConfigurations = {
       iridium = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -37,13 +39,15 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.fabian = import ./modules/home.nix;
+              users.${USER} = import ./modules/home/home.nix;
             };
           }
         ];
       };
+      
       meteor = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/meteor/configuration.nix
           home-manager.nixosModules.home-manager
@@ -54,7 +58,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.fabian = import ./modules/home.nix;
+              users.${USER} = import ./modules/home/home.nix;
             };
           }
         ];
@@ -62,6 +66,7 @@
 
       glonass = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/glonass/configuration.nix
           home-manager.nixosModules.home-manager
@@ -71,7 +76,7 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.titus = import ./modules/home.nix;
+              users.${USER} = import ./modules/home/home.nix;
             };
           }
         ];

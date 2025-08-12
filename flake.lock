@@ -5,11 +5,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1755032468,
-        "narHash": "sha256-6h4BvrlwGGi1Epfa64A3w4ELbp2hrSD4goTL2ApFyqA=",
+        "lastModified": 1755033398,
+        "narHash": "sha256-caxdJBZQD7WHH6XyTAXmeNkukhoWXP+Si1Z18samryE=",
         "owner": "Sojus07",
         "repo": "dwm-nix",
-        "rev": "f8c0254322f6ad64c6f15e6df77f80edaa48316b",
+        "rev": "5fe0d4264950cb3d52a2b9e129d5ece240a350ef",
         "type": "github"
       },
       "original": {
@@ -233,11 +233,11 @@
         "nvf": "nvf"
       },
       "locked": {
-        "lastModified": 1754535583,
-        "narHash": "sha256-KnpOmZUZT6slioX9CgM+2xl+KqRprTaEnBh6wtZyCFs=",
+        "lastModified": 1755035843,
+        "narHash": "sha256-DcU1G7oxkYHJWcQgAEPQJqlTqkGYD28LWJ/ByKKbiMc=",
         "owner": "Sojus07",
         "repo": "nvf-config",
-        "rev": "c09cdb67e3edacd0b3df1f5b818efa85e889f13f",
+        "rev": "da0a97b3c357797ae624c69d3fd7ea75ee50d912",
         "type": "github"
       },
       "original": {

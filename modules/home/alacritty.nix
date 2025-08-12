@@ -19,12 +19,11 @@
       };
       colors = {
         primary = {
-          background = "#090a0a"; 
+          background = "#1c1c1c"; 
           foreground = "#b6b7b7"; 
-          cursor     = "#b6b7b7"; 
         };
         normal = {
-          black   = "#090a0a"; 
+          black   = "#1c1c1c"; 
           red     = "#3C3E41"; 
           green   = "#403F40"; 
           yellow  = "#3F4043"; 
@@ -34,7 +33,7 @@
           white   = "#b6b7b7"; 
         };
         bright = {
-          black   = "#7f8080"; 
+          black   = "#1c1c1c"; 
           red     = "#3C3E41"; 
           green   = "#403F40"; 
           yellow  = "#3F4043"; 

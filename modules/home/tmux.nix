@@ -36,11 +36,11 @@
         set -g status-position top
         set -g status-left-length 64
         
-        set -g status-style "bg=#090a0a,fg=#b6b7b7"
-        set -g status-left  "#[bg=#090a0a,fg=#b6b7b7,bold] [#S]"
-        set -g status-right "#[bg=#090a0a,fg=#b6b7b7] #{pane_title} #[bg=#090a0a,fg=#b6b7b7,bold] | %a %d %b | #[fg=#b6b7b7,bold]%H:%M "
-        setw -g window-status-current-format "#[bg=#b6b7b7,fg=#090a0a,nobold,noitalics,nounderscore] #[bg=#b6b7b7,fg=#090a0a,bold] #I #[bg=#b6b7b7,fg=#090a0a,bold] #W#{?window_zoomed_flag,*Z,} #[bg=#090a0a,fg=#b6b7b7,nobold,noitalics,nounderscore]"
-        setw -g window-status-format         "#[bg=#090a0a,fg=#b6b7b7,noitalics] #[bg=#090a0a,fg=#b6b7b7] #I #[bg=#090a0a,fg=#b6b7b7] #W #[bg=#090a0a,fg=#b6b7b7,noitalics]"
+        set -g status-style "bg=#1c1c1c,fg=#b6b7b7"
+        set -g status-left  "#[bg=#1c1c1c,fg=#b6b7b7,bold] [#S]"
+        set -g status-right "#[bg=#1c1c1c,fg=#b6b7b7] #{pane_title} #[bg=#1c1c1c,fg=#b6b7b7,bold] | %a %d %b | #[fg=#b6b7b7,bold]%H:%M "
+        setw -g window-status-current-format "#[bg=#262626,fg=#b6b7b7,nobold,noitalics,nounderscore] #[bg=#262626,fg=#b6b7b7,bold] #I #[bg=#262626,fg=#b6b7b7,bold] #W#{?window_zoomed_flag,*Z,} #[bg=#1c1c1c,fg=#b6b7b7,nobold,noitalics,nounderscore]"
+        setw -g window-status-format         "#[bg=#1c1c1c,fg=#b6b7b7,noitalics] #[bg=#1c1c1c,fg=#b6b7b7] #I #[bg=#1c1c1c,fg=#b6b7b7] #W #[bg=#1c1c1c,fg=#b6b7b7,noitalics]"
 
       '';
     };

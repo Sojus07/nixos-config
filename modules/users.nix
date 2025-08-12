@@ -21,9 +21,6 @@
         package = pkgs.bash-completion;
       };
       shellInit = ''
-        case "$TERM" in
-          xterm-color|*-256color) color_prompt=yes;;
-        esac 
         export DEVKITPRO="/opt/devkitpro"
         export DEVKITA64="$DEVKITPRO/devkitA64"
         export DEVKITARM="$DEVKITPRO/devkitARM"

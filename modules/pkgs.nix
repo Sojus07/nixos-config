@@ -37,10 +37,7 @@
     # Development & compilers
     rustup
     python3
-    python312Packages.pip
     nodejs
-    gccgo14
-    go
     bear
 
     # Android development
@@ -68,12 +65,7 @@
     python312Packages.pyserial
     python312Packages.meshtastic
 
-    # Virtualization
-    qemu
-
     # Miscellaneous
-    cava
-    vesktop
     qbittorrent
 
   ]; 

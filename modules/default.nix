@@ -7,6 +7,7 @@
     ./firefox.nix
     ./git.nix
     ./spotify.nix
+    ./discord.nix
   ];
 
   hardware = {
