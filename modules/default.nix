@@ -6,7 +6,7 @@
     ./users.nix
     ./firefox.nix
     ./git.nix
-    ./tmux.nix
+    ./spotify.nix
   ];
 
   hardware = {
@@ -26,6 +26,7 @@
     iperf3
     speedtest-cli
     dhcpcd
+    ansible
   ];
   services = {
     iperf3 = {

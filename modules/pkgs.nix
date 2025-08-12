@@ -75,6 +75,7 @@
     cava
     vesktop
     qbittorrent
+
   ]; 
 
   fonts = {

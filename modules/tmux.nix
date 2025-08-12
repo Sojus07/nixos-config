@@ -3,6 +3,8 @@
   programs = {
     tmux = {
       enable = true;
+      disableConfirmationPrompt = true;
+      mouse = true;
       keyMode = "vi";
       extraConfig = ''
         unbind C-b
@@ -33,13 +35,12 @@
         set -g status-fg white
         set -g status-position top
         set -g status-left-length 64
-        set -g status-left "#[bg=black,fg=white,bold] [#S]"
-        set -g status-right-length 64
-        set -g status-right "#[bg=black,fg=white] #{pane_title} #[bg=black,fg=white,bold] | #[bg=black,fg=white,bold] %a %d %b | #[fg=white,bold]%H:%M "
-
-        set-window-option -g window-status-current-format "#[bg=white,fg=black,nobold,noitalics,nounderscore] #[bg=white,fg=black,bold] #I #[bg=white,fg=black,bold] #W#{?window_zoomed_flag,*Z,} #[bg=black,fg=white,nobold,noitalics,nounderscore]"
-        set-window-option -g window-status-format "#[bg=black,fg=white,noitalics] #[bg=black,fg=white] #I #[bg=black,fg=white] #W #[bg=black,fg=white,noitalics]"           
-      
+        
+        set -g status-style "bg=#090a0a,fg=#b6b7b7"
+        set -g status-left  "#[bg=#090a0a,fg=#b6b7b7,bold] [#S]"
+        set -g status-right "#[bg=#090a0a,fg=#b6b7b7] #{pane_title} #[bg=#090a0a,fg=#b6b7b7,bold] | %a %d %b | #[fg=#b6b7b7,bold]%H:%M "
+        setw -g window-status-current-format "#[bg=#b6b7b7,fg=#090a0a,nobold,noitalics,nounderscore] #[bg=#b6b7b7,fg=#090a0a,bold] #I #[bg=#b6b7b7,fg=#090a0a,bold] #W#{?window_zoomed_flag,*Z,} #[bg=#090a0a,fg=#b6b7b7,nobold,noitalics,nounderscore]"
+        setw -g window-status-format         "#[bg=#090a0a,fg=#b6b7b7,noitalics] #[bg=#090a0a,fg=#b6b7b7] #I #[bg=#090a0a,fg=#b6b7b7] #W #[bg=#090a0a,fg=#b6b7b7,noitalics]"
 
       '';
     };
