@@ -24,7 +24,7 @@
           CallTimer.enabled = true;
           fakeNitro.enabled = true;
         };
-
+        enabledThemes = [ ../raw/themes/system24.css ]; 
       };
     };
   };

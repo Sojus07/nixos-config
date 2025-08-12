@@ -15,7 +15,7 @@
         };
       };
       terminal = {
-        shell = "tmux";
+        shell = "bash";
       };
       colors = {
         primary = {
