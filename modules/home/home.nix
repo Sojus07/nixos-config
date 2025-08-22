@@ -5,6 +5,7 @@
     ./tmux.nix 
     ./alacritty.nix 
     ./discord.nix
+    ./sway/sway.nix
   ];
   home = {
     enableNixpkgsReleaseCheck = false;
