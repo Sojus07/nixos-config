@@ -5,8 +5,9 @@
     nix-sdr.url = "github:Sojus07/nix-sdr";
     dwm-nix.url = "github:Sojus07/dwm-nix";
     nvf-config.url = "github:Sojus07/nvf-config"; 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    engineering.url = "github:Sojus07/engineering";
 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -19,7 +20,8 @@
     nix-sdr,
     dwm-nix,
     nvf-config,
-    spicetify-nix
+    spicetify-nix,
+    engineering
   }@inputs: let 
     USER = "fabian";
   in {
@@ -30,9 +32,12 @@
         modules = [
           ./hosts/iridium/configuration.nix
           home-manager.nixosModules.home-manager
+          
           nix-sdr.nixosModules.default
           dwm-nix.nixosModules.default
           nvf-config.nixosModules.default
+          engineering.nixosModules.default
+
           {
             home-manager = {
               useGlobalPkgs = true;
