@@ -23,17 +23,14 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1756160777,
-        "narHash": "sha256-rJxXguUAWA/skhhgn+busRBVWsQ4KPNudEZOKCl9RTs=",
-        "owner": "Sojus07",
-        "repo": "engineering",
-        "rev": "9ef156080d29cf34129741b32b0a4353da2d646f",
-        "type": "github"
+        "lastModified": 1756166075,
+        "narHash": "sha256-/+mrbZgwx3aSdhBl1F0Tq2VBchoAIgzsFPZY76O6/Yw=",
+        "path": "/home/fabian/repos/engineering",
+        "type": "path"
       },
       "original": {
-        "owner": "Sojus07",
-        "repo": "engineering",
-        "type": "github"
+        "path": "/home/fabian/repos/engineering",
+        "type": "path"
       }
     },
     "flake-compat": {

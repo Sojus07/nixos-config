@@ -54,9 +54,12 @@
         modules = [
           ./hosts/meteor/configuration.nix
           home-manager.nixosModules.home-manager
+          
           nix-sdr.nixosModules.default
           dwm-nix.nixosModules.default
           nvf-config.nixosModules.default
+          engineering.nixosModules.default
+          
           {
             home-manager = {
               useGlobalPkgs = true;
