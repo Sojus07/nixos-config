@@ -12,6 +12,8 @@
   home.file = {
     ".config/rofi/config.rasi".source = ./rofi/config.rasi;
     ".config/wezterm/wezterm.lua".source = ./wez/wezterm.lua;
+    ".config/waybar/config".source = ./waybar/config;
+    ".config/waybar/style.css".source = ./waybar/style.css;
   };
 
   wayland.windowManager.sway = {
