@@ -12,7 +12,6 @@
     usbutils
     alsa-utils
     pavucontrol
-    flameshot
     feh
     gnumake
     tree

@@ -5,9 +5,7 @@
     nix-sdr.url = "github:Sojus07/nix-sdr";
     dwm-nix.url = "github:Sojus07/dwm-nix";
     nvf-config.url = "github:Sojus07/nvf-config"; 
-    
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
@@ -32,7 +30,7 @@
         modules = [
           ./hosts/iridium/configuration.nix
           home-manager.nixosModules.home-manager
-          #nix-sdr.nixosModules.default
+          nix-sdr.nixosModules.default
           dwm-nix.nixosModules.default
           nvf-config.nixosModules.default
           {
@@ -52,24 +50,6 @@
           ./hosts/meteor/configuration.nix
           home-manager.nixosModules.home-manager
           nix-sdr.nixosModules.default
-          dwm-nix.nixosModules.default
-          nvf-config.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.${USER} = import ./modules/home/home.nix;
-            };
-          }
-        ];
-      };
-
-      glonass = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/glonass/configuration.nix
-          home-manager.nixosModules.home-manager
           dwm-nix.nixosModules.default
           nvf-config.nixosModules.default
           {

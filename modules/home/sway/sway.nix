@@ -1,21 +1,30 @@
 {config, pkgs, ... }:
+
 {
+  home.packages = with pkgs; [
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
+    xdg-desktop-portal-gtk
+    rofi
+    (flameshot.override { enableWlrSupport = true; })
+  ];
+  
   home.file = {
     ".config/rofi/config.rasi".source = ./rofi/config.rasi;
-    ".config/wez/wezterm.lua".source = ./wez/wezterm.lua;
+    ".config/wezterm/wezterm.lua".source = ./wez/wezterm.lua;
   };
 
   wayland.windowManager.sway = {
     enable = true;
     xwayland = true;
-    package = pkgs.swayfx-unwrapped;
+    package = pkgs.swayfx;
     wrapperFeatures.gtk = true;
     checkConfig = false;
-    
+    systemd.enable = true; 
     extraSessionCommands = ''
-      export _JAVA_AWT_WM_NONREPARENTING=1
-      export QT_QPA_PLATFORM=wayland
-      export XDG_CURRENT_DESKTOP=sway
+      MOZ_ENABLE_WAYLAND = "1";
+      XDG_CURRENT_DESKTOP = "sway";
+      XDG_SESSION_TYPE = "wayland";
     '';
 
     config = rec {
@@ -23,7 +32,8 @@
       terminal = "${pkgs.wezterm}/bin/wezterm";
       menu = "${pkgs.rofi}/bin/rofi -show drun -c .config/rofi/config.rasi";
       startup = [
-        {command = "${pkgs.swaybg}/bin/swaybg -i $HOME/.wp/skull_purple.png";}
+        { command = "${pkgs.swaybg}/bin/swaybg -i ~/.wp/platform.png"; }
+        { command = "flameshot"; }
       ];
       bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];      
       gaps = {
@@ -41,7 +51,7 @@
         "${modifier}+space" = "exec ${menu}";
         "${modifier}+Q" = "kill";
         "${modifier}+Shift+R" = "reload";
-        "${modifier}+Shift+S" = "${pkgs.grim}/bin/grim -g '$(${pkgs.slurp}/bin/slurp)'";
+        "${modifier}+Shift+S" = "${pkgs.grim}/bin/grim";
         
         # WINDOW STUFF #
         "${modifier}+Shift+space" = "floating toggle";
@@ -108,6 +118,8 @@
       for_window [app_id="wezterm"] blur enable
       for_window [app_id="code"] blur enable
       for_window [app_id="rofi"] blur enable
+      
+      for_window [app_id="xdg-open"] floating enable
 
       default_border pixel 0px
       default_floating_border none

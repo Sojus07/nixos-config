@@ -51,22 +51,7 @@
           "adbusers"
           "kvm"
           "dialout"
-        ];
-      };
-      titus = {
-        useDefaultShell = true;
-        isNormalUser = true;
-        initialPassword = "2106";
-        extraGroups = [
-          "wheel"
-          "docker"
-          "audio"
-          "video"
-          "dialout"
-          "plugdev"
-          "adbusers"
-          "kvm"
-          "dialout"
+          "input"
         ];
       };
     };
