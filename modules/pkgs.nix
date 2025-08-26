@@ -38,6 +38,8 @@
     python3
     nodejs
     bear
+    llvm_21
+    gcc
 
     # Android development
     android-tools
